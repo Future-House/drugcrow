@@ -29,6 +29,10 @@ def parse_schema(file_path):
                         r"\s{2,}", line
                     )  # Assume at least two spaces as a separator
                     try:
+                        keytype = data[0]
+                        if not re.match(r"^([A-Z]K,)*[A-Z]K$", keytype):
+                            data = [""] + data
+
                         column_entry = {
                             "Keys": data[0],
                             "ColumnName": data[1],

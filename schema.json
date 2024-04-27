@@ -10,17 +10,17 @@
                 "Comment": "Primary key. Type of action of the drug e.g., agonist, antagonist"
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of how the action type is used",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of how the action type is used"
             },
             {
-                "Keys": "PARENT_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Higher-level grouping of action types e.g., positive vs negative action",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PARENT_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Higher-level grouping of action types e.g., positive vs negative action",
                 "Comment": ""
             }
         ]
@@ -64,45 +64,45 @@
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Symbol constraining the activity value (e.g. >, <, =)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Symbol constraining the activity value (e.g. >, <, =)",
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Same as PUBLISHED_VALUE but transformed to common units: e.g. mM concentrations converted to nM.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Same as PUBLISHED_VALUE but transformed to common units: e.g. mM concentrations converted to nM.",
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Selected 'Standard' units for data type: e.g. concentrations are in nM.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Selected 'Standard' units for data type: e.g. concentrations are in nM.",
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "Shows whether the standardised columns have been curated/set (1) or just default to the published data (0).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "Shows whether the standardised columns have been curated/set (1) or just default to the published data (0).",
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_TYPE",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Standardised version of the published_activity_type (e.g. IC50 rather than Ic-50/Ic50/ic50/ic-50)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_TYPE",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Standardised version of the published_activity_type (e.g. IC50 rather than Ic-50/Ic50/ic50/ic-50)",
                 "Comment": ""
             },
             {
-                "Keys": "ACTIVITY_COMMENT",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Previously used to report non-numeric activities i.e. 'Slighty active', 'Not determined'. STANDARD_TEXT_VALUE will be used for this in future, and this will be just for additional comments.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ACTIVITY_COMMENT",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Previously used to report non-numeric activities i.e. 'Slighty active', 'Not determined'. STANDARD_TEXT_VALUE will be used for this in future, and this will be just for additional comments.",
                 "Comment": ""
             },
             {
@@ -113,10 +113,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "PCHEMBL_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Negative log of selected concentration-response activity values (IC50/EC50/XC50/AC50/Ki/Kd/Potency)",
+                "Keys": "",
+                "ColumnName": "POTENTIAL_DUPLICATE NUMBER",
+                "DataType": "When set to 1, indicates that the value is likely to be a repeat citation of a value reported in a previous ChEMBL paper, rather than a new, independent measurement. Note: value of zero does not guarantee that the measurement is novel/independent though",
                 "Nullable": "",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "PCHEMBL_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Negative log of selected concentration-response activity values (IC50/EC50/XC50/AC50/Ki/Kd/Potency)",
                 "Comment": ""
             },
             {
@@ -127,38 +134,38 @@
                 "Comment": ""
             },
             {
-                "Keys": "UO_UNITS",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "ID for the corresponding unit in Unit Ontology (based on standard_units)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "UO_UNITS",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "ID for the corresponding unit in Unit Ontology (based on standard_units)",
                 "Comment": ""
             },
             {
-                "Keys": "QUDT_UNITS",
-                "ColumnName": "VARCHAR2(70)",
-                "DataType": "ID for the corresponding unit in QUDT Ontology (based on standard_units)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "QUDT_UNITS",
+                "DataType": "VARCHAR2(70)",
+                "Nullable": "ID for the corresponding unit in QUDT Ontology (based on standard_units)",
                 "Comment": ""
             },
             {
-                "Keys": "TOID",
-                "ColumnName": "INTEGER",
-                "DataType": "The Test Occasion Identifier, used to group together related activity measurements",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TOID",
+                "DataType": "INTEGER",
+                "Nullable": "The Test Occasion Identifier, used to group together related activity measurements",
                 "Comment": ""
             },
             {
-                "Keys": "UPPER_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Where the activity is a range, this represents the highest value of the range (numerically), while the PUBLISHED_VALUE column represents the lower value",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "UPPER_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Where the activity is a range, this represents the highest value of the range (numerically), while the PUBLISHED_VALUE column represents the lower value",
                 "Comment": ""
             },
             {
-                "Keys": "STANDARD_UPPER_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Where the activity is a range, this represents the standardised version of the highest value of the range (with the lower value represented by STANDARD_VALUE)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STANDARD_UPPER_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Where the activity is a range, this represents the standardised version of the highest value of the range (with the lower value represented by STANDARD_VALUE)",
                 "Comment": ""
             },
             {
@@ -169,37 +176,44 @@
                 "Comment": ""
             },
             {
-                "Keys": "TYPE",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "NOT NULL",
-                "Nullable": "Type of end-point measurement: e.g. IC50, LD50, %inhibition etc, as it appears in the original dataset",
+                "Keys": "",
+                "ColumnName": "TYPE",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "NOT NULL",
+                "Comment": "Type of end-point measurement: e.g. IC50, LD50, %inhibition etc, as it appears in the original dataset"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Symbol constraining the activity value (e.g. >, <, =), as it appears in the original dataset",
                 "Comment": ""
             },
             {
-                "Keys": "RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Symbol constraining the activity value (e.g. >, <, =), as it appears in the original dataset",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Datapoint value as it appears in the original dataset.",
                 "Comment": ""
             },
             {
-                "Keys": "VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Datapoint value as it appears in the original dataset.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Units of measurement as they appear in the original dataset",
                 "Comment": ""
             },
             {
-                "Keys": "UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Units of measurement as they appear in the original dataset",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TEXT_VALUE",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Additional information about the measurement",
                 "Comment": ""
             },
             {
-                "Keys": "TEXT_VALUE",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Additional information about the measurement",
+                "Keys": "",
+                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(1000)",
+                "DataType": "Standardized version of additional information about the measurement",
                 "Nullable": "",
                 "Comment": ""
             },
@@ -237,74 +251,81 @@
                 "Comment": "The parameter or property type"
             },
             {
-                "Keys": "RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Symbol constraining the value (e.g. >, <, =)",
+                "Keys": "",
+                "ColumnName": "RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Symbol constraining the value (e.g. >, <, =)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Numberical value for the parameter or property",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Units of measurement",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TEXT_VALUE",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Non-numerical value of the parameter or property",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TYPE",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Standardised form of the TYPE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Standardised form of the RELATION",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Standardised form of the VALUE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Standardised form of the UNITS",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(2000)",
+                "DataType": "Standardised form of the TEXT_VALUE",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Numberical value for the parameter or property",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMMENTS",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "A Comment.",
                 "Comment": ""
             },
             {
-                "Keys": "UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Units of measurement",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "TEXT_VALUE",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Non-numerical value of the parameter or property",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_TYPE",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Standardised form of the TYPE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Standardised form of the RELATION",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Standardised form of the VALUE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Standardised form of the UNITS",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "COMMENTS",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "A Comment.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "RESULT_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "A flag to indicate, if set to 1, that this type is a dependent variable/result (e.g., slope) rather than an independent variable/parameter (0, the default).",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "RESULT_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "A flag to indicate, if set to 1, that this type is a dependent variable/result (e.g., slope) rather than an independent variable/parameter (0, the default)."
             }
         ]
     },
@@ -338,10 +359,10 @@
                 "Comment": "The standard_type that other published_types in the activities table have been converted to."
             },
             {
-                "Keys": "DEFINITION",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "A description/definition of the standard_type.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DEFINITION",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "A description/definition of the standard_type.",
                 "Comment": ""
             },
             {
@@ -352,17 +373,17 @@
                 "Comment": "The units that are applied to this standard_type and to which other published_units are converted. Note a standard_type may have more than one allowable standard_unit and therefore multiple rows in this table."
             },
             {
-                "Keys": "NORMAL_RANGE_MIN",
-                "ColumnName": "NUMBER",
-                "DataType": "The lowest value for this activity type that is likely to be genuine. This is only an approximation, so lower genuine values may exist, but it may be desirable to validate these before using them. For a given standard_type/units, values in the activities table below this threshold are flagged with a data_validity_comment of 'Outside typical range'.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "NORMAL_RANGE_MIN",
+                "DataType": "NUMBER",
+                "Nullable": "The lowest value for this activity type that is likely to be genuine. This is only an approximation, so lower genuine values may exist, but it may be desirable to validate these before using them. For a given standard_type/units, values in the activities table below this threshold are flagged with a data_validity_comment of 'Outside typical range'.",
                 "Comment": ""
             },
             {
-                "Keys": "NORMAL_RANGE_MAX",
-                "ColumnName": "NUMBER",
-                "DataType": "The highest value for this activity type that is likely to be genuine. This is only an approximation, so higher genuine values may exist, but it may be desirable to validate these before using them. For a given standard_type/units, values in the activities table above this threshold are flagged with a data_validity_comment of 'Outside typical range'.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "NORMAL_RANGE_MAX",
+                "DataType": "NUMBER",
+                "Nullable": "The highest value for this activity type that is likely to be genuine. This is only an approximation, so higher genuine values may exist, but it may be desirable to validate these before using them. For a given standard_type/units, values in the activities table above this threshold are flagged with a data_validity_comment of 'Outside typical range'.",
                 "Comment": ""
             }
         ]
@@ -399,66 +420,73 @@
                 "Comment": "Type of end-point measurement: e.g. IC50, LD50, %inhibition etc, as it appears in the original dataset"
             },
             {
-                "Keys": "RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Symbol constraining the activity value (e.g. >, <, =), as it appears in the original dataset",
+                "Keys": "",
+                "ColumnName": "RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Symbol constraining the activity value (e.g. >, <, =), as it appears in the original dataset",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Datapoint value as it appears in the original dataset.",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Units of measurement as they appear in the original dataset",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TEXT_VALUE",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Non-numeric value for measurement as in original dataset",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TYPE",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Standardised form of the TYPE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Standardised form of the RELATION",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Standardised form of the VALUE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Standardised form of the UNITS",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(1000)",
+                "DataType": "Standardised form of the TEXT_VALUE",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Datapoint value as it appears in the original dataset.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Units of measurement as they appear in the original dataset",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "TEXT_VALUE",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Non-numeric value for measurement as in original dataset",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_TYPE",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Standardised form of the TYPE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Standardised form of the RELATION",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Standardised form of the VALUE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Standardised form of the UNITS",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "COMMENTS",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "A Comment.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMMENTS",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "A Comment.",
                 "Comment": ""
             }
         ]
@@ -526,17 +554,17 @@
                 "Comment": "Primary key"
             },
             {
-                "Keys": "L1",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "High level classification e.g., by anatomical/therapeutic area",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "L1",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "High level classification e.g., by anatomical/therapeutic area",
                 "Comment": ""
             },
             {
-                "Keys": "L2",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Mid-level classification e.g., by phenotype/biological process",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "L2",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Mid-level classification e.g., by phenotype/biological process",
                 "Comment": ""
             },
             {
@@ -547,17 +575,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "CLASS_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "The type of assay being classified e.g., in vivo efficacy",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CLASS_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "The type of assay being classified e.g., in vivo efficacy",
                 "Comment": ""
             },
             {
-                "Keys": "SOURCE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Source from which the assay class was obtained",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SOURCE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Source from which the assay class was obtained",
                 "Comment": ""
             }
         ]
@@ -587,66 +615,73 @@
                 "Comment": "The type of parameter being described, according to the original data source"
             },
             {
-                "Keys": "RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "The relation symbol for the parameter being described, according to the original data source",
+                "Keys": "",
+                "ColumnName": "RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "The relation symbol for the parameter being described, according to the original data source",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "The value of the parameter being described, according to the original data source. Used for numeric data",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "The units for the parameter being described, according to the original data source",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TEXT_VALUE",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "The text value of the parameter being described, according to the original data source. Used for non-numeric/qualitative data",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TYPE",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Standardized form of the TYPE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_RELATION",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Standardized form of the RELATION",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Standardized form of the VALUE",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_UNITS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Standardized form of the UNITS",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(4000)",
+                "DataType": "Standardized form of the TEXT_VALUE",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "The value of the parameter being described, according to the original data source. Used for numeric data",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "The units for the parameter being described, according to the original data source",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "TEXT_VALUE",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "The text value of the parameter being described, according to the original data source. Used for non-numeric/qualitative data",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_TYPE",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Standardized form of the TYPE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_RELATION",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Standardized form of the RELATION",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Standardized form of the VALUE",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "STANDARD_UNITS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Standardized form of the UNITS",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "COMMENTS",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Additional comments describing the parameter",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMMENTS",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Additional comments describing the parameter",
                 "Comment": ""
             }
         ]
@@ -662,10 +697,10 @@
                 "Comment": "Single character representing assay type"
             },
             {
-                "Keys": "ASSAY_DESC",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Description of assay type",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_DESC",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Description of assay type",
                 "Comment": ""
             }
         ]
@@ -688,10 +723,10 @@
                 "Comment": "Foreign key to documents table"
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Description of the reported assay",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Description of the reported assay",
                 "Comment": ""
             },
             {
@@ -702,59 +737,59 @@
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_TEST_TYPE",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "Type of assay system (i.e., in vivo or in vitro)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_TEST_TYPE",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "Type of assay system (i.e., in vivo or in vitro)",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_CATEGORY",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "screening, confirmatory (ie: dose-response), summary, panel, other,Thermal shift assay QC liability, Thermal shift assay, Affinity biochemical assay, Incucyte cell viability, Affinity phenotypic cellular assay, HTRF assay, Selectivity assay, Cell health data, NanoBRET assay, Alphascreen assay, Affinity on-target cellular assay, ITC assay, GPCR beta-arrestin recruitment assay",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_CATEGORY",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "screening, confirmatory (ie: dose-response), summary, panel, other,Thermal shift assay QC liability, Thermal shift assay, Affinity biochemical assay, Incucyte cell viability, Affinity phenotypic cellular assay, HTRF assay, Selectivity assay, Cell health data, NanoBRET assay, Alphascreen assay, Affinity on-target cellular assay, ITC assay, GPCR beta-arrestin recruitment assay",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_ORGANISM",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Name of the organism for the assay system (e.g., the organism, tissue or cell line in which an assay was performed). May differ from the target organism (e.g., for a human protein expressed in non-human cells, or pathogen-infected human cells).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_ORGANISM",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Name of the organism for the assay system (e.g., the organism, tissue or cell line in which an assay was performed). May differ from the target organism (e.g., for a human protein expressed in non-human cells, or pathogen-infected human cells).",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_TAX_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NCBI tax ID for the assay organism.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_TAX_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NCBI tax ID for the assay organism.",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_STRAIN",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Name of specific strain of the assay organism used (where known)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_STRAIN",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Name of specific strain of the assay organism used (where known)",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_TISSUE",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Name of tissue used in the assay system (e.g., for tissue-based assays) or from which the assay system was derived (e.g., for cell/subcellular fraction-based assays).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_TISSUE",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Name of tissue used in the assay system (e.g., for tissue-based assays) or from which the assay system was derived (e.g., for cell/subcellular fraction-based assays).",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_CELL_TYPE",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Name of cell type or cell line used in the assay system (e.g., for cell-based assays).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_CELL_TYPE",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Name of cell type or cell line used in the assay system (e.g., for cell-based assays).",
                 "Comment": ""
             },
             {
-                "Keys": "ASSAY_SUBCELLULAR_FRACTION",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Name of subcellular fraction used in the assay system (e.g., microsomes, mitochondria).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASSAY_SUBCELLULAR_FRACTION",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Name of subcellular fraction used in the assay system (e.g., microsomes, mitochondria).",
                 "Comment": ""
             },
             {
@@ -793,10 +828,10 @@
                 "Comment": "Foreign key to source table"
             },
             {
-                "Keys": "SRC_ASSAY_ID",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Identifier for the assay in the source database/deposition (e.g., pubchem AID)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SRC_ASSAY_ID",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Identifier for the assay in the source database/deposition (e.g., pubchem AID)",
                 "Comment": ""
             },
             {
@@ -835,11 +870,11 @@
                 "Comment": ""
             },
             {
-                "Keys": "AIDX",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "The Depositor Defined Assay Identifier",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "AIDX",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "The Depositor Defined Assay Identifier"
             }
         ]
     },
@@ -847,38 +882,38 @@
         "TableName": "ATC_CLASSIFICATION",
         "Columns": [
             {
-                "Keys": "WHO_NAME",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "WHO/INN name for the compound",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "WHO_NAME",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "WHO/INN name for the compound",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL1",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "First level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL1",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "First level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL2",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "Second level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL2",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "Second level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL3",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "Third level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL3",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "Third level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL4",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "Fourth level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL4",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "Fourth level of classification",
                 "Comment": ""
             },
             {
@@ -889,31 +924,31 @@
                 "Comment": "Complete ATC code for compound"
             },
             {
-                "Keys": "LEVEL1_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of first level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL1_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of first level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL2_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of second level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL2_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of second level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL3_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of third level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL3_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of third level of classification",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL4_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of fourth level of classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL4_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of fourth level of classification",
                 "Comment": ""
             }
         ]
@@ -929,10 +964,10 @@
                 "Comment": "Primary key. Unique identifier for a binding site in a given target."
             },
             {
-                "Keys": "SITE_NAME",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Name/label for the binding site.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SITE_NAME",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Name/label for the binding site.",
                 "Comment": ""
             },
             {
@@ -955,45 +990,45 @@
                 "Comment": "Primary key. Unique identifier for each of the molecular components of biotherapeutics in ChEMBL (e.g., antibody chains, recombinant proteins, synthetic peptides)."
             },
             {
-                "Keys": "COMPONENT_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "NOT NULL",
-                "Nullable": "Type of molecular component (e.g., 'PROTEIN', 'NUCLEIC ACID').",
+                "Keys": "",
+                "ColumnName": "COMPONENT_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "NOT NULL",
+                "Comment": "Type of molecular component (e.g., 'PROTEIN', 'NUCLEIC ACID')."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Description/name of molecular component.",
                 "Comment": ""
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Description/name of molecular component.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEQUENCE",
+                "DataType": "CLOB",
+                "Nullable": "Sequence of the biotherapeutic component.",
                 "Comment": ""
             },
             {
-                "Keys": "SEQUENCE",
-                "ColumnName": "CLOB",
-                "DataType": "Sequence of the biotherapeutic component.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEQUENCE_MD5SUM",
+                "DataType": "VARCHAR2(32)",
+                "Nullable": "MD5 checksum of the sequence.",
                 "Comment": ""
             },
             {
-                "Keys": "SEQUENCE_MD5SUM",
-                "ColumnName": "VARCHAR2(32)",
-                "DataType": "MD5 checksum of the sequence.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TAX_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NCBI tax ID for the species from which the sequence is derived. May be null for humanized monoclonal antibodies, synthetic peptides etc.",
                 "Comment": ""
             },
             {
-                "Keys": "TAX_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NCBI tax ID for the species from which the sequence is derived. May be null for humanized monoclonal antibodies, synthetic peptides etc.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "ORGANISM",
-                "ColumnName": "VARCHAR2(150)",
-                "DataType": "Name of the species from which the sequence is derived.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORGANISM",
+                "DataType": "VARCHAR2(150)",
+                "Nullable": "Name of the species from which the sequence is derived.",
                 "Comment": ""
             }
         ]
@@ -1009,11 +1044,11 @@
                 "Comment": "Bioassay Ontology identifier (BAO version 2.0)"
             },
             {
-                "Keys": "LABEL",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "NOT NULL",
-                "Nullable": "Bioassay Ontology label for the term (BAO version 2.0)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LABEL",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "NOT NULL",
+                "Comment": "Bioassay Ontology label for the term (BAO version 2.0)"
             }
         ]
     },
@@ -1054,17 +1089,17 @@
                 "Comment": "Foreign key to molecule_dictionary"
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of the biotherapeutic.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of the biotherapeutic.",
                 "Comment": ""
             },
             {
-                "Keys": "HELM_NOTATION",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Sequence notation generated according to the HELM standard (http://www.openhelm.org/home). Currently for peptides only",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HELM_NOTATION",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Sequence notation generated according to the HELM standard (http://www.openhelm.org/home). Currently for peptides only",
                 "Comment": ""
             }
         ]
@@ -1087,24 +1122,24 @@
                 "Comment": "Name of each cell line (as used in the target_dicitonary pref_name)."
             },
             {
-                "Keys": "CELL_DESCRIPTION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Longer description (where available) of the cell line.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CELL_DESCRIPTION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Longer description (where available) of the cell line.",
                 "Comment": ""
             },
             {
-                "Keys": "CELL_SOURCE_TISSUE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Tissue from which the cell line is derived, where known.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CELL_SOURCE_TISSUE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Tissue from which the cell line is derived, where known.",
                 "Comment": ""
             },
             {
-                "Keys": "CELL_SOURCE_ORGANISM",
-                "ColumnName": "VARCHAR2(150)",
-                "DataType": "Name of organism from which the cell line is derived.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CELL_SOURCE_ORGANISM",
+                "DataType": "VARCHAR2(150)",
+                "Nullable": "Name of organism from which the cell line is derived.",
                 "Comment": ""
             },
             {
@@ -1115,31 +1150,31 @@
                 "Comment": ""
             },
             {
-                "Keys": "CLO_ID",
-                "ColumnName": "VARCHAR2(11)",
-                "DataType": "ID for the corresponding cell line in Cell Line Ontology",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CLO_ID",
+                "DataType": "VARCHAR2(11)",
+                "Nullable": "ID for the corresponding cell line in Cell Line Ontology",
                 "Comment": ""
             },
             {
-                "Keys": "EFO_ID",
-                "ColumnName": "VARCHAR2(12)",
-                "DataType": "ID for the corresponding cell line in Experimental Factory Ontology",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "EFO_ID",
+                "DataType": "VARCHAR2(12)",
+                "Nullable": "ID for the corresponding cell line in Experimental Factory Ontology",
                 "Comment": ""
             },
             {
-                "Keys": "CELLOSAURUS_ID",
-                "ColumnName": "VARCHAR2(15)",
-                "DataType": "ID for the corresponding cell line in Cellosaurus Ontology",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CELLOSAURUS_ID",
+                "DataType": "VARCHAR2(15)",
+                "Nullable": "ID for the corresponding cell line in Cellosaurus Ontology",
                 "Comment": ""
             },
             {
-                "Keys": "CL_LINCS_ID",
-                "ColumnName": "VARCHAR2(8)",
-                "DataType": "Cell ID used in LINCS (Library of Integrated Network-based Cellular Signatures)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CL_LINCS_ID",
+                "DataType": "VARCHAR2(8)",
+                "Nullable": "Cell ID used in LINCS (Library of Integrated Network-based Cellular Signatures)",
                 "Comment": ""
             },
             {
@@ -1150,10 +1185,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "CELL_ONTOLOGY_ID",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "ID for the corresponding cell type in the Cell Ontology",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CELL_ONTOLOGY_ID",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "ID for the corresponding cell type in the Cell Ontology",
                 "Comment": ""
             }
         ]
@@ -1183,17 +1218,17 @@
                 "Comment": "Primary key for that entity in corresponding table (e.g., molregno for compounds, tid for targets)"
             },
             {
-                "Keys": "STATUS",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the status of the entity within the database - ACTIVE, INACTIVE (downgraded), OBS (obsolete/removed).",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "STATUS",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the status of the entity within the database - ACTIVE, INACTIVE (downgraded), OBS (obsolete/removed)."
             },
             {
-                "Keys": "LAST_ACTIVE",
-                "ColumnName": "NUMBER",
-                "DataType": "indicates the last ChEMBL version where the CHEMBL_ID was active",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LAST_ACTIVE",
+                "DataType": "NUMBER",
+                "Nullable": "indicates the last ChEMBL version where the CHEMBL_ID was active",
                 "Comment": ""
             }
         ]
@@ -1209,17 +1244,17 @@
                 "Comment": "Primary key"
             },
             {
-                "Keys": "CHEMBL_RELEASE",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "ChEMBL release name",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CHEMBL_RELEASE",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "ChEMBL release name",
                 "Comment": ""
             },
             {
-                "Keys": "CREATION_DATE",
-                "ColumnName": "DATE",
-                "DataType": "ChEMBL release creation date",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CREATION_DATE",
+                "DataType": "DATE",
+                "Nullable": "ChEMBL release creation date",
                 "Comment": ""
             }
         ]
@@ -1282,10 +1317,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "END_POSITION",
-                "ColumnName": "NUMBER",
-                "DataType": "End position of the domain within the sequence given in the component_sequences table.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "END_POSITION",
+                "DataType": "NUMBER",
+                "Nullable": "End position of the domain within the sequence given in the component_sequences table.",
                 "Comment": ""
             }
         ]
@@ -1327,10 +1362,10 @@
                 "Comment": "Primary key. Unique identifier for the component."
             },
             {
-                "Keys": "COMPONENT_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Type of molecular component represented (e.g., 'PROTEIN','DNA','RNA').",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMPONENT_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Type of molecular component represented (e.g., 'PROTEIN','DNA','RNA').",
                 "Comment": ""
             },
             {
@@ -1341,52 +1376,52 @@
                 "Comment": ""
             },
             {
-                "Keys": "SEQUENCE",
-                "ColumnName": "CLOB",
-                "DataType": "A representative sequence for the molecular component, as given in the source sequence database (not necessarily the exact sequence used in the assay).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEQUENCE",
+                "DataType": "CLOB",
+                "Nullable": "A representative sequence for the molecular component, as given in the source sequence database (not necessarily the exact sequence used in the assay).",
                 "Comment": ""
             },
             {
-                "Keys": "SEQUENCE_MD5SUM",
-                "ColumnName": "VARCHAR2(32)",
-                "DataType": "MD5 checksum of the sequence.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEQUENCE_MD5SUM",
+                "DataType": "VARCHAR2(32)",
+                "Nullable": "MD5 checksum of the sequence.",
                 "Comment": ""
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Description/name for the molecular component, usually taken from the source sequence database.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Description/name for the molecular component, usually taken from the source sequence database.",
                 "Comment": ""
             },
             {
-                "Keys": "TAX_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NCBI tax ID for the sequence in the source database (i.e., species that the protein/nucleic acid sequence comes from).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TAX_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NCBI tax ID for the sequence in the source database (i.e., species that the protein/nucleic acid sequence comes from).",
                 "Comment": ""
             },
             {
-                "Keys": "ORGANISM",
-                "ColumnName": "VARCHAR2(150)",
-                "DataType": "Name of the organism the sequence comes from.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORGANISM",
+                "DataType": "VARCHAR2(150)",
+                "Nullable": "Name of the organism the sequence comes from.",
                 "Comment": ""
             },
             {
-                "Keys": "DB_SOURCE",
-                "ColumnName": "VARCHAR2(25)",
-                "DataType": "The name of the source sequence database from which sequences/accessions are taken. For UniProt proteins, this field indicates whether the sequence is from SWISS-PROT or TREMBL.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DB_SOURCE",
+                "DataType": "VARCHAR2(25)",
+                "Nullable": "The name of the source sequence database from which sequences/accessions are taken. For UniProt proteins, this field indicates whether the sequence is from SWISS-PROT or TREMBL.",
                 "Comment": ""
             },
             {
-                "Keys": "DB_VERSION",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "The version of the source sequence database from which sequences/accession were last updated.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DB_VERSION",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "The version of the source sequence database from which sequences/accession were last updated.",
                 "Comment": ""
             }
         ]
@@ -1435,164 +1470,164 @@
                 "Comment": "Foreign key to compounds table (compound structure)"
             },
             {
-                "Keys": "MW_FREEBASE",
-                "ColumnName": "NUMBER",
-                "DataType": "Molecular weight of parent compound",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MW_FREEBASE",
+                "DataType": "NUMBER",
+                "Nullable": "Molecular weight of parent compound",
                 "Comment": ""
             },
             {
-                "Keys": "ALOGP",
-                "ColumnName": "NUMBER",
-                "DataType": "Calculated ALogP",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ALOGP",
+                "DataType": "NUMBER",
+                "Nullable": "Calculated ALogP",
                 "Comment": ""
             },
             {
-                "Keys": "HBA",
-                "ColumnName": "NUMBER",
-                "DataType": "Number hydrogen bond acceptors",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HBA",
+                "DataType": "NUMBER",
+                "Nullable": "Number hydrogen bond acceptors",
                 "Comment": ""
             },
             {
-                "Keys": "HBD",
-                "ColumnName": "NUMBER",
-                "DataType": "Number hydrogen bond donors",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HBD",
+                "DataType": "NUMBER",
+                "Nullable": "Number hydrogen bond donors",
                 "Comment": ""
             },
             {
-                "Keys": "PSA",
-                "ColumnName": "NUMBER",
-                "DataType": "Polar surface area",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PSA",
+                "DataType": "NUMBER",
+                "Nullable": "Polar surface area",
                 "Comment": ""
             },
             {
-                "Keys": "RTB",
-                "ColumnName": "NUMBER",
-                "DataType": "Number rotatable bonds",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "RTB",
+                "DataType": "NUMBER",
+                "Nullable": "Number rotatable bonds",
                 "Comment": ""
             },
             {
-                "Keys": "RO3_PASS",
-                "ColumnName": "VARCHAR2(3)",
-                "DataType": "Indicates whether the compound passes the rule-of-three (mw < 300, logP < 3 etc)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "RO3_PASS",
+                "DataType": "VARCHAR2(3)",
+                "Nullable": "Indicates whether the compound passes the rule-of-three (mw < 300, logP < 3 etc)",
                 "Comment": ""
             },
             {
-                "Keys": "NUM_RO5_VIOLATIONS",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of violations of Lipinski's rule-of-five, using HBA and HBD definitions",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "NUM_RO5_VIOLATIONS",
+                "DataType": "NUMBER",
+                "Nullable": "Number of violations of Lipinski's rule-of-five, using HBA and HBD definitions",
                 "Comment": ""
             },
             {
-                "Keys": "CX_MOST_APKA",
-                "ColumnName": "NUMBER",
-                "DataType": "The most acidic pKa calculated using ChemAxon v17.29.0",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CX_MOST_APKA",
+                "DataType": "NUMBER",
+                "Nullable": "The most acidic pKa calculated using ChemAxon v17.29.0",
                 "Comment": ""
             },
             {
-                "Keys": "CX_MOST_BPKA",
-                "ColumnName": "NUMBER",
-                "DataType": "The most basic pKa calculated using ChemAxon v17.29.0",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CX_MOST_BPKA",
+                "DataType": "NUMBER",
+                "Nullable": "The most basic pKa calculated using ChemAxon v17.29.0",
                 "Comment": ""
             },
             {
-                "Keys": "CX_LOGP",
-                "ColumnName": "NUMBER",
-                "DataType": "The calculated octanol/water partition coefficient using ChemAxon v17.29.0",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CX_LOGP",
+                "DataType": "NUMBER",
+                "Nullable": "The calculated octanol/water partition coefficient using ChemAxon v17.29.0",
                 "Comment": ""
             },
             {
-                "Keys": "CX_LOGD",
-                "ColumnName": "NUMBER",
-                "DataType": "The calculated octanol/water distribution coefficient at pH7.4 using ChemAxon v17.29.0",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CX_LOGD",
+                "DataType": "NUMBER",
+                "Nullable": "The calculated octanol/water distribution coefficient at pH7.4 using ChemAxon v17.29.0",
                 "Comment": ""
             },
             {
-                "Keys": "MOLECULAR_SPECIES",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Indicates whether the compound is an acid/base/neutral",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MOLECULAR_SPECIES",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Indicates whether the compound is an acid/base/neutral",
                 "Comment": ""
             },
             {
-                "Keys": "FULL_MWT",
-                "ColumnName": "NUMBER",
-                "DataType": "Molecular weight of the full compound including any salts",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "FULL_MWT",
+                "DataType": "NUMBER",
+                "Nullable": "Molecular weight of the full compound including any salts",
                 "Comment": ""
             },
             {
-                "Keys": "AROMATIC_RINGS",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of aromatic rings",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "AROMATIC_RINGS",
+                "DataType": "NUMBER",
+                "Nullable": "Number of aromatic rings",
                 "Comment": ""
             },
             {
-                "Keys": "HEAVY_ATOMS",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of heavy (non-hydrogen) atoms",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HEAVY_ATOMS",
+                "DataType": "NUMBER",
+                "Nullable": "Number of heavy (non-hydrogen) atoms",
                 "Comment": ""
             },
             {
-                "Keys": "QED_WEIGHTED",
-                "ColumnName": "NUMBER",
-                "DataType": "Weighted quantitative estimate of drug likeness (as defined by Bickerton et al., Nature Chem 2012)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "QED_WEIGHTED",
+                "DataType": "NUMBER",
+                "Nullable": "Weighted quantitative estimate of drug likeness (as defined by Bickerton et al., Nature Chem 2012)",
                 "Comment": ""
             },
             {
-                "Keys": "MW_MONOISOTOPIC",
-                "ColumnName": "NUMBER",
-                "DataType": "Monoisotopic parent molecular weight",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MW_MONOISOTOPIC",
+                "DataType": "NUMBER",
+                "Nullable": "Monoisotopic parent molecular weight",
                 "Comment": ""
             },
             {
-                "Keys": "FULL_MOLFORMULA",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Molecular formula for the full compound (including any salt)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "FULL_MOLFORMULA",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Molecular formula for the full compound (including any salt)",
                 "Comment": ""
             },
             {
-                "Keys": "HBA_LIPINSKI",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of hydrogen bond acceptors calculated according to Lipinski's original rules (i.e., N + O count))",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HBA_LIPINSKI",
+                "DataType": "NUMBER",
+                "Nullable": "Number of hydrogen bond acceptors calculated according to Lipinski's original rules (i.e., N + O count))",
                 "Comment": ""
             },
             {
-                "Keys": "HBD_LIPINSKI",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of hydrogen bond donors calculated according to Lipinski's original rules (i.e., NH + OH count)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "HBD_LIPINSKI",
+                "DataType": "NUMBER",
+                "Nullable": "Number of hydrogen bond donors calculated according to Lipinski's original rules (i.e., NH + OH count)",
                 "Comment": ""
             },
             {
-                "Keys": "NUM_LIPINSKI_RO5_VIOLATIONS",
-                "ColumnName": "NUMBER",
-                "DataType": "Number of violations of Lipinski's rule of five using HBA_LIPINSKI and HBD_LIPINSKI counts",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "NUM_LIPINSKI_RO5_VIOLATIONS",
+                "DataType": "NUMBER",
+                "Nullable": "Number of violations of Lipinski's rule of five using HBA_LIPINSKI and HBD_LIPINSKI counts",
                 "Comment": ""
             },
             {
-                "Keys": "NP_LIKENESS_SCORE",
-                "ColumnName": "NUMBER",
-                "DataType": "Natural Product-likeness Score: Peter Ertl, Silvio Roggo, and Ansgar Schuffenhauer Journal of Chemical Information and Modeling, 48, 68-74 (2008)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "NP_LIKENESS_SCORE",
+                "DataType": "NUMBER",
+                "Nullable": "Natural Product-likeness Score: Peter Ertl, Silvio Roggo, and Ansgar Schuffenhauer Journal of Chemical Information and Modeling, 48, 68-74 (2008)",
                 "Comment": ""
             }
         ]
@@ -1622,17 +1657,17 @@
                 "Comment": "Foreign key to documents table"
             },
             {
-                "Keys": "COMPOUND_KEY",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Key text identifying this compound in the scientific document",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMPOUND_KEY",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Key text identifying this compound in the scientific document",
                 "Comment": ""
             },
             {
-                "Keys": "COMPOUND_NAME",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Name of this compound recorded in the scientific document",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMPOUND_NAME",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Name of this compound recorded in the scientific document",
                 "Comment": ""
             },
             {
@@ -1643,18 +1678,18 @@
                 "Comment": "Foreign key to source table"
             },
             {
-                "Keys": "SRC_COMPOUND_ID",
-                "ColumnName": "VARCHAR2(150)",
-                "DataType": "Identifier for the compound in the source database (e.g., pubchem SID)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SRC_COMPOUND_ID",
+                "DataType": "VARCHAR2(150)",
+                "Nullable": "Identifier for the compound in the source database (e.g., pubchem SID)",
                 "Comment": ""
             },
             {
-                "Keys": "CIDX",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "The Depositor Defined Compound Identifier.",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "CIDX",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "The Depositor Defined Compound Identifier."
             }
         ]
     },
@@ -1695,10 +1730,10 @@
                 "Comment": "Internal Primary Key for the compound structure and foreign key to molecule_dictionary table"
             },
             {
-                "Keys": "MOLFILE",
-                "ColumnName": "CLOB",
-                "DataType": "MDL Connection table representation of compound",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MOLFILE",
+                "DataType": "CLOB",
+                "Nullable": "MDL Connection table representation of compound",
                 "Comment": ""
             },
             {
@@ -1716,10 +1751,10 @@
                 "Comment": "IUPAC standard InChI key for the compound"
             },
             {
-                "Keys": "CANONICAL_SMILES",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Canonical smiles, generated using RDKit",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CANONICAL_SMILES",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Canonical smiles, generated using RDKit",
                 "Comment": ""
             }
         ]
@@ -1735,18 +1770,18 @@
                 "Comment": "0-9 score showing level of confidence in assignment of the precise molecular target of the assay"
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of the target types assigned with each score",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of the target types assigned with each score"
             },
             {
-                "Keys": "TARGET_MAPPING",
-                "ColumnName": "VARCHAR2(30)",
-                "DataType": "NOT NULL",
-                "Nullable": "Short description of the target types assigned with each score",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "TARGET_MAPPING",
+                "DataType": "VARCHAR2(30)",
+                "Nullable": "NOT NULL",
+                "Comment": "Short description of the target types assigned with each score"
             }
         ]
     },
@@ -1761,11 +1796,11 @@
                 "Comment": "Short description of the level of curation"
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "NOT NULL",
-                "Nullable": "Definition of terms in the curated_by field.",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "NOT NULL",
+                "Comment": "Definition of terms in the curated_by field."
             }
         ]
     },
@@ -1780,10 +1815,10 @@
                 "Comment": "Primary key. Short description of various types of errors/warnings applied to values in the activities table."
             },
             {
-                "Keys": "DESCRIPTION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Definition of the terms in the data_validity_comment field.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DESCRIPTION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Definition of the terms in the data_validity_comment field.",
                 "Comment": ""
             }
         ]
@@ -1799,24 +1834,24 @@
                 "Comment": "ATC code for the compound (foreign key to ATC_CLASSIFICATION table)"
             },
             {
-                "Keys": "DDD_UNITS",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Units of defined daily dose",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DDD_UNITS",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Units of defined daily dose",
                 "Comment": ""
             },
             {
-                "Keys": "DDD_ADMR",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Administration route for dose",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DDD_ADMR",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Administration route for dose",
                 "Comment": ""
             },
             {
-                "Keys": "DDD_COMMENT",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Comment",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DDD_COMMENT",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Comment",
                 "Comment": ""
             },
             {
@@ -1827,10 +1862,10 @@
                 "Comment": "Internal primary key"
             },
             {
-                "Keys": "DDD_VALUE",
-                "ColumnName": "NUMBER",
-                "DataType": "Value of defined daily dose",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DDD_VALUE",
+                "DataType": "NUMBER",
+                "Nullable": "Value of defined daily dose",
                 "Comment": ""
             }
         ]
@@ -1846,59 +1881,59 @@
                 "Comment": "Unique ID for the document"
             },
             {
-                "Keys": "JOURNAL",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Abbreviated journal name for an article",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "JOURNAL",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Abbreviated journal name for an article",
                 "Comment": ""
             },
             {
-                "Keys": "YEAR",
-                "ColumnName": "NUMBER",
-                "DataType": "Year of journal article publication",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "YEAR",
+                "DataType": "NUMBER",
+                "Nullable": "Year of journal article publication",
                 "Comment": ""
             },
             {
-                "Keys": "VOLUME",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Volume of journal article",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "VOLUME",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Volume of journal article",
                 "Comment": ""
             },
             {
-                "Keys": "ISSUE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Issue of journal article",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ISSUE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Issue of journal article",
                 "Comment": ""
             },
             {
-                "Keys": "FIRST_PAGE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "First page number of journal article",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "FIRST_PAGE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "First page number of journal article",
                 "Comment": ""
             },
             {
-                "Keys": "LAST_PAGE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Last page number of journal article",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LAST_PAGE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Last page number of journal article",
                 "Comment": ""
             },
             {
-                "Keys": "PUBMED_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NIH pubmed record ID, where available",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PUBMED_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NIH pubmed record ID, where available",
                 "Comment": ""
             },
             {
-                "Keys": "DOI",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Digital object identifier for this reference",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DOI",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Digital object identifier for this reference",
                 "Comment": ""
             },
             {
@@ -1909,46 +1944,46 @@
                 "Comment": "ChEMBL identifier for this document (for use on web interface etc)"
             },
             {
-                "Keys": "TITLE",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "Document title (e.g., Publication title or description of dataset)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TITLE",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "Document title (e.g., Publication title or description of dataset)",
                 "Comment": ""
             },
             {
-                "Keys": "DOC_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "NOT NULL",
-                "Nullable": "Type of the document (e.g., Publication, Deposited dataset)",
+                "Keys": "",
+                "ColumnName": "DOC_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "NOT NULL",
+                "Comment": "Type of the document (e.g., Publication, Deposited dataset)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "AUTHORS",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "For a deposited dataset, the authors carrying out the screening and/or submitting the dataset.",
                 "Comment": ""
             },
             {
-                "Keys": "AUTHORS",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "For a deposited dataset, the authors carrying out the screening and/or submitting the dataset.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ABSTRACT",
+                "DataType": "CLOB",
+                "Nullable": "For a deposited dataset, a brief description of the dataset.",
                 "Comment": ""
             },
             {
-                "Keys": "ABSTRACT",
-                "ColumnName": "CLOB",
-                "DataType": "For a deposited dataset, a brief description of the dataset.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PATENT_ID",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "Patent ID for this document",
                 "Comment": ""
             },
             {
-                "Keys": "PATENT_ID",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "Patent ID for this document",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "RIDX",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "The Depositor Defined Reference Identifier",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "RIDX",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "The Depositor Defined Reference Identifier"
             },
             {
                 "Keys": "FK",
@@ -1965,10 +2000,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "CONTACT",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Details of someone willing to be contacted over the dataset (ideally ORCID ID, up to 3)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CONTACT",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Details of someone willing to be contacted over the dataset (ideally ORCID ID, up to 3)",
                 "Comment": ""
             }
         ]
@@ -1984,31 +2019,31 @@
                 "Comment": "Primary key. Unique identifier for each domain."
             },
             {
-                "Keys": "DOMAIN_TYPE",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates the source of the domain (e.g., Pfam).",
+                "Keys": "",
+                "ColumnName": "DOMAIN_TYPE",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates the source of the domain (e.g., Pfam)."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "SOURCE_DOMAIN_ID",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "NOT NULL",
+                "Comment": "Identifier for the domain in the source database (e.g., Pfam ID such as PF00001)."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "DOMAIN_NAME",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Name given to the domain in the source database (e.g., 7tm_1).",
                 "Comment": ""
             },
             {
-                "Keys": "SOURCE_DOMAIN_ID",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "NOT NULL",
-                "Nullable": "Identifier for the domain in the source database (e.g., Pfam ID such as PF00001).",
-                "Comment": ""
-            },
-            {
-                "Keys": "DOMAIN_NAME",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Name given to the domain in the source database (e.g., 7tm_1).",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "DOMAIN_DESCRIPTION",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "Longer name or description for the domain.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DOMAIN_DESCRIPTION",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "Longer name or description for the domain.",
                 "Comment": ""
             }
         ]
@@ -2038,10 +2073,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "MAX_PHASE_FOR_IND",
-                "ColumnName": "NUMBER",
-                "DataType": "Maximum phase of development that the drug is known to have reached for this particular indication (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MAX_PHASE_FOR_IND",
+                "DataType": "NUMBER",
+                "Nullable": "Maximum phase of development that the drug is known to have reached for this particular indication (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase)",
                 "Comment": ""
             },
             {
@@ -2052,11 +2087,11 @@
                 "Comment": "Medical Subject Headings (MeSH) disease identifier corresponding to the indication"
             },
             {
-                "Keys": "MESH_HEADING",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "Medical Subject Heading term for the MeSH disease ID",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "MESH_HEADING",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "Medical Subject Heading term for the MeSH disease ID"
             },
             {
                 "Keys": "UK",
@@ -2066,10 +2101,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "EFO_TERM",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Experimental Factor Ontology term for the EFO ID",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "EFO_TERM",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Experimental Factor Ontology term for the EFO ID",
                 "Comment": ""
             }
         ]
@@ -2099,6 +2134,13 @@
                 "Comment": ""
             },
             {
+                "Keys": "",
+                "ColumnName": "MECHANISM_OF_ACTION VARCHAR2(250)",
+                "DataType": "Description of the mechanism of action e.g., 'Phosphodiesterase 5 inhibitor'",
+                "Nullable": "",
+                "Comment": ""
+            },
+            {
                 "Keys": "FK",
                 "ColumnName": "TID",
                 "DataType": "NUMBER",
@@ -2120,31 +2162,45 @@
                 "Comment": ""
             },
             {
-                "Keys": "DIRECT_INTERACTION",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether the molecule is believed to interact directly with the target (1 = yes, 0 = no)",
+                "Keys": "",
+                "ColumnName": "DIRECT_INTERACTION",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether the molecule is believed to interact directly with the target (1 = yes, 0 = no)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "MOLECULAR_MECHANISM NUMBER",
+                "DataType": "Flag to show whether the mechanism of action describes the molecular target of the drug, rather than a higher-level physiological mechanism e.g., vasodilator (1 = yes, 0 = no)",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "DISEASE_EFFICACY",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether the target assigned is believed to play a role in the efficacy of the drug in the indication(s) for which it is approved (1 = yes, 0 = no)",
+                "Keys": "",
+                "ColumnName": "DISEASE_EFFICACY",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether the target assigned is believed to play a role in the efficacy of the drug in the indication(s) for which it is approved (1 = yes, 0 = no)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "MECHANISM_COMMENT",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Additional comments regarding the mechanism of action",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "SELECTIVITY_COMMENT VARCHAR2(1000)",
+                "DataType": "Additional comments regarding the selectivity of the drug",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "MECHANISM_COMMENT",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Additional comments regarding the mechanism of action",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "BINDING_SITE_COMMENT",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Additional comments regarding the binding site of the drug",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "BINDING_SITE_COMMENT",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Additional comments regarding the binding site of the drug",
                 "Comment": ""
             },
             {
@@ -2174,59 +2230,66 @@
                 "Comment": ""
             },
             {
-                "Keys": "MOLREGNO",
-                "ColumnName": "NUMBER",
-                "DataType": "Foreign key to molecule_dictionary table",
+                "Keys": "",
+                "ColumnName": "MOLREGNO",
+                "DataType": "NUMBER",
+                "Nullable": "Foreign key to molecule_dictionary table",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "WARNING_TYPE",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "Description of the drug warning type (e.g., withdrawn vs black box warning)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "WARNING_CLASS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "High-level class of the drug warning",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "WARNING_DESCRIPTION VARCHAR2(4000)",
+                "DataType": "Description of the drug warning",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "WARNING_TYPE",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "Description of the drug warning type (e.g., withdrawn vs black box warning)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "WARNING_COUNTRY",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "List of countries/regions associated with the drug warning",
                 "Comment": ""
             },
             {
-                "Keys": "WARNING_CLASS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "High-level class of the drug warning",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "WARNING_YEAR",
+                "DataType": "NUMBER",
+                "Nullable": "Earliest year the warning was applied to the drug.",
                 "Comment": ""
             },
             {
-                "Keys": "WARNING_COUNTRY",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "List of countries/regions associated with the drug warning",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "EFO_TERM",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Term for Experimental Factor Ontology (EFO)",
                 "Comment": ""
             },
             {
-                "Keys": "WARNING_YEAR",
-                "ColumnName": "NUMBER",
-                "DataType": "Earliest year the warning was applied to the drug.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "EFO_ID",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "Identifier for Experimental Factor Ontology (EFO)",
                 "Comment": ""
             },
             {
-                "Keys": "EFO_TERM",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Term for Experimental Factor Ontology (EFO)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "EFO_ID",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "Identifier for Experimental Factor Ontology (EFO)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "EFO_ID_FOR_WARNING_CLASS",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "Warning Class Identifier for Experimental Factor Ontology (EFO)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "EFO_ID_FOR_WARNING_CLASS",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "Warning Class Identifier for Experimental Factor Ontology (EFO)",
                 "Comment": ""
             }
         ]
@@ -2242,17 +2305,17 @@
                 "Comment": "Unique identifier of the product. FK to PRODUCTS"
             },
             {
-                "Keys": "INGREDIENT",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Name of the approved ingredient within the product",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "INGREDIENT",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Name of the approved ingredient within the product",
                 "Comment": ""
             },
             {
-                "Keys": "STRENGTH",
-                "ColumnName": "VARCHAR2(300)",
-                "DataType": "Dose strength",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STRENGTH",
+                "DataType": "VARCHAR2(300)",
+                "Nullable": "Dose strength",
                 "Comment": ""
             },
             {
@@ -2289,66 +2352,66 @@
                 "Comment": "Unique numeric primary key for each level5 code"
             },
             {
-                "Keys": "ACTIVE_INGREDIENT",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "NOT NULL",
-                "Nullable": "Name of active ingredient (fungicide) classified by FRAC",
+                "Keys": "",
+                "ColumnName": "ACTIVE_INGREDIENT",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "NOT NULL",
+                "Comment": "Name of active ingredient (fungicide) classified by FRAC"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "LEVEL1",
+                "DataType": "VARCHAR2(2)",
+                "Nullable": "NOT NULL",
+                "Comment": "Mechanism of action code assigned by FRAC"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "LEVEL1_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of mechanism of action"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "LEVEL2",
+                "DataType": "VARCHAR2(2)",
+                "Nullable": "NOT NULL",
+                "Comment": "Target site code assigned by FRAC"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "LEVEL2_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of target provided by FRAC",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL1",
-                "ColumnName": "VARCHAR2(2)",
-                "DataType": "NOT NULL",
-                "Nullable": "Mechanism of action code assigned by FRAC",
+                "Keys": "",
+                "ColumnName": "LEVEL3",
+                "DataType": "VARCHAR2(6)",
+                "Nullable": "NOT NULL",
+                "Comment": "Group number assigned by FRAC"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "LEVEL3_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of group provided by FRAC",
                 "Comment": ""
             },
             {
-                "Keys": "LEVEL1_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of mechanism of action",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL4",
+                "DataType": "VARCHAR2(7)",
+                "Nullable": "NOT NULL",
+                "Comment": "Number denoting the chemical group (number not assigned by FRAC)"
             },
             {
-                "Keys": "LEVEL2",
-                "ColumnName": "VARCHAR2(2)",
-                "DataType": "NOT NULL",
-                "Nullable": "Target site code assigned by FRAC",
-                "Comment": ""
-            },
-            {
-                "Keys": "LEVEL2_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of target provided by FRAC",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "LEVEL3",
-                "ColumnName": "VARCHAR2(6)",
-                "DataType": "NOT NULL",
-                "Nullable": "Group number assigned by FRAC",
-                "Comment": ""
-            },
-            {
-                "Keys": "LEVEL3_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of group provided by FRAC",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "LEVEL4",
-                "ColumnName": "VARCHAR2(7)",
-                "DataType": "NOT NULL",
-                "Nullable": "Number denoting the chemical group (number not assigned by FRAC)",
-                "Comment": ""
-            },
-            {
-                "Keys": "LEVEL4_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Chemical group name provided by FRAC",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL4_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Chemical group name provided by FRAC",
                 "Comment": ""
             },
             {
@@ -2359,11 +2422,11 @@
                 "Comment": "A unique code assigned to each ingredient (based on the level 1-4 FRAC classification, but not assigned by IRAC)"
             },
             {
-                "Keys": "FRAC_CODE",
-                "ColumnName": "VARCHAR2(4)",
-                "DataType": "NOT NULL",
-                "Nullable": "The official FRAC classification code for the ingredient",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "FRAC_CODE",
+                "DataType": "VARCHAR2(4)",
+                "Nullable": "NOT NULL",
+                "Comment": "The official FRAC classification code for the ingredient"
             }
         ]
     },
@@ -2378,38 +2441,38 @@
                 "Comment": "Primary key. Gene Ontology identifier for the GO slim term"
             },
             {
-                "Keys": "PARENT_GO_ID",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "Gene Ontology identifier for the parent of this GO term in the ChEMBL Drug Target GO slim",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PARENT_GO_ID",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "Gene Ontology identifier for the parent of this GO term in the ChEMBL Drug Target GO slim",
                 "Comment": ""
             },
             {
-                "Keys": "PREF_NAME",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Gene Ontology name",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PREF_NAME",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Gene Ontology name",
                 "Comment": ""
             },
             {
-                "Keys": "CLASS_LEVEL",
-                "ColumnName": "NUMBER",
-                "DataType": "Indicates the level of the term in the slim (L1 = highest)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CLASS_LEVEL",
+                "DataType": "NUMBER",
+                "Nullable": "Indicates the level of the term in the slim (L1 = highest)",
                 "Comment": ""
             },
             {
-                "Keys": "ASPECT",
-                "ColumnName": "VARCHAR2(1)",
-                "DataType": "Indicates which aspect of the Gene Ontology the term belongs to (F = molecular function, P = biological process, C = cellular component)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ASPECT",
+                "DataType": "VARCHAR2(1)",
+                "Nullable": "Indicates which aspect of the Gene Ontology the term belongs to (F = molecular function, P = biological process, C = cellular component)",
                 "Comment": ""
             },
             {
-                "Keys": "PATH",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Indicates the full path to this term in the GO slim",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PATH",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Indicates the full path to this term in the GO slim",
                 "Comment": ""
             }
         ]
@@ -2425,38 +2488,38 @@
                 "Comment": "Unique numeric primary key for each level3 code"
             },
             {
-                "Keys": "ACTIVE_INGREDIENT",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "NOT NULL",
-                "Nullable": "Name of active ingredient (herbicide) classified by HRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "ACTIVE_INGREDIENT",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "NOT NULL",
+                "Comment": "Name of active ingredient (herbicide) classified by HRAC"
             },
             {
-                "Keys": "LEVEL1",
-                "ColumnName": "VARCHAR2(2)",
-                "DataType": "NOT NULL",
-                "Nullable": "HRAC group code - denoting mechanism of action of herbicide",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL1",
+                "DataType": "VARCHAR2(2)",
+                "Nullable": "NOT NULL",
+                "Comment": "HRAC group code - denoting mechanism of action of herbicide"
             },
             {
-                "Keys": "LEVEL1_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of mechanism of action provided by HRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL1_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of mechanism of action provided by HRAC"
             },
             {
-                "Keys": "LEVEL2",
-                "ColumnName": "VARCHAR2(3)",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates a chemical family within a particular HRAC group (number not assigned by HRAC)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL2",
+                "DataType": "VARCHAR2(3)",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates a chemical family within a particular HRAC group (number not assigned by HRAC)"
             },
             {
-                "Keys": "LEVEL2_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of chemical family provided by HRAC",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LEVEL2_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of chemical family provided by HRAC",
                 "Comment": ""
             },
             {
@@ -2467,11 +2530,11 @@
                 "Comment": "A unique code assigned to each ingredient (based on the level 1 and 2 HRAC classification, but not assigned by HRAC)"
             },
             {
-                "Keys": "HRAC_CODE",
-                "ColumnName": "VARCHAR2(2)",
-                "DataType": "NOT NULL",
-                "Nullable": "The official HRAC classification code for the ingredient",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "HRAC_CODE",
+                "DataType": "VARCHAR2(2)",
+                "Nullable": "NOT NULL",
+                "Comment": "The official HRAC classification code for the ingredient"
             }
         ]
     },
@@ -2507,11 +2570,11 @@
                 "Comment": "Identifier for the reference in the source"
             },
             {
-                "Keys": "REF_URL",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Full URL linking to the reference",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "REF_URL",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Full URL linking to the reference"
             }
         ]
     },
@@ -2526,53 +2589,53 @@
                 "Comment": "Unique numeric primary key for each level4 code"
             },
             {
-                "Keys": "ACTIVE_INGREDIENT",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "NOT NULL",
-                "Nullable": "Name of active ingredient (insecticide) classified by IRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "ACTIVE_INGREDIENT",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "NOT NULL",
+                "Comment": "Name of active ingredient (insecticide) classified by IRAC"
             },
             {
-                "Keys": "LEVEL1",
-                "ColumnName": "VARCHAR2(1)",
-                "DataType": "NOT NULL",
-                "Nullable": "Class of action e.g., nerve action, energy metabolism (code not assigned by IRAC)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL1",
+                "DataType": "VARCHAR2(1)",
+                "Nullable": "NOT NULL",
+                "Comment": "Class of action e.g., nerve action, energy metabolism (code not assigned by IRAC)"
             },
             {
-                "Keys": "LEVEL1_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of class of action, as provided by IRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL1_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of class of action, as provided by IRAC"
             },
             {
-                "Keys": "LEVEL2",
-                "ColumnName": "VARCHAR2(3)",
-                "DataType": "NOT NULL",
-                "Nullable": "IRAC main group code denoting primary site/mechanism of action",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL2",
+                "DataType": "VARCHAR2(3)",
+                "Nullable": "NOT NULL",
+                "Comment": "IRAC main group code denoting primary site/mechanism of action"
             },
             {
-                "Keys": "LEVEL2_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of site/mechanism of action provided by IRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL2_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of site/mechanism of action provided by IRAC"
             },
             {
-                "Keys": "LEVEL3",
-                "ColumnName": "VARCHAR2(6)",
-                "DataType": "NOT NULL",
-                "Nullable": "IRAC sub-group code denoting chemical class of insecticide",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL3",
+                "DataType": "VARCHAR2(6)",
+                "Nullable": "NOT NULL",
+                "Comment": "IRAC sub-group code denoting chemical class of insecticide"
             },
             {
-                "Keys": "LEVEL3_DESCRIPTION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "NOT NULL",
-                "Nullable": "Description of chemical class or exemplifying ingredient provided by IRAC",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LEVEL3_DESCRIPTION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "NOT NULL",
+                "Comment": "Description of chemical class or exemplifying ingredient provided by IRAC"
             },
             {
                 "Keys": "UK",
@@ -2582,11 +2645,11 @@
                 "Comment": "A unique code assigned to each ingredient (based on the level 1, 2 and 3 IRAC classification, but not assigned by IRAC)"
             },
             {
-                "Keys": "IRAC_CODE",
-                "ColumnName": "VARCHAR2(3)",
-                "DataType": "NOT NULL",
-                "Nullable": "The official IRAC classification code for the ingredient",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "IRAC_CODE",
+                "DataType": "VARCHAR2(3)",
+                "Nullable": "NOT NULL",
+                "Comment": "The official IRAC classification code for the ingredient"
             }
         ]
     },
@@ -2601,31 +2664,31 @@
                 "Comment": "Link key to activities table"
             },
             {
-                "Keys": "BEI",
-                "ColumnName": "NUMBER",
-                "DataType": "Binding Efficiency Index = p(XC50) *1000/MW_freebase",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "BEI",
+                "DataType": "NUMBER",
+                "Nullable": "Binding Efficiency Index = p(XC50) *1000/MW_freebase",
                 "Comment": ""
             },
             {
-                "Keys": "SEI",
-                "ColumnName": "NUMBER",
-                "DataType": "Surface Efficiency Index = p(XC50)*100/PSA",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEI",
+                "DataType": "NUMBER",
+                "Nullable": "Surface Efficiency Index = p(XC50)*100/PSA",
                 "Comment": ""
             },
             {
-                "Keys": "LE",
-                "ColumnName": "NUMBER",
-                "DataType": "Ligand Efficiency = deltaG/heavy_atoms",
-                "Nullable": "[from the Hopkins DDT paper 2004]",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "LE",
+                "DataType": "NUMBER",
+                "Nullable": "Ligand Efficiency = deltaG/heavy_atoms",
+                "Comment": "[from the Hopkins DDT paper 2004]"
             },
             {
-                "Keys": "LLE",
-                "ColumnName": "NUMBER",
-                "DataType": "Lipophilic Ligand Efficiency = -logKi-ALogP. [from Leeson NRDD 2007]",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "LLE",
+                "DataType": "NUMBER",
+                "Nullable": "Lipophilic Ligand Efficiency = -logKi-ALogP. [from Leeson NRDD 2007]",
                 "Comment": ""
             }
         ]
@@ -2662,10 +2725,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "REF_URL",
-                "ColumnName": "VARCHAR2(400)",
-                "DataType": "Full URL linking to the reference",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "REF_URL",
+                "DataType": "VARCHAR2(400)",
+                "Nullable": "Full URL linking to the reference",
                 "Comment": ""
             }
         ]
@@ -2709,10 +2772,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "PATHWAY_KEY",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Link to original source indicating where the pathway information was found (e.g., Figure 1, page 23)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PATHWAY_KEY",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Link to original source indicating where the pathway information was found (e.g., Figure 1, page 23)",
                 "Comment": ""
             },
             {
@@ -2730,17 +2793,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "MET_CONVERSION",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Description of the metabolic conversion",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MET_CONVERSION",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Description of the metabolic conversion",
                 "Comment": ""
             },
             {
-                "Keys": "ORGANISM",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Organism in which this metabolic reaction occurs",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORGANISM",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Organism in which this metabolic reaction occurs",
                 "Comment": ""
             },
             {
@@ -2751,10 +2814,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "MET_COMMENT",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Additional information regarding the metabolism (e.g., organ system, conditions under which observed, activity of metabolites)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MET_COMMENT",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Additional information regarding the metabolism (e.g., organ system, conditions under which observed, activity of metabolites)",
                 "Comment": ""
             }
         ]
@@ -2791,10 +2854,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "REF_URL",
-                "ColumnName": "VARCHAR2(400)",
-                "DataType": "Full URL linking to the reference",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "REF_URL",
+                "DataType": "VARCHAR2(400)",
+                "Nullable": "Full URL linking to the reference",
                 "Comment": ""
             }
         ]
@@ -2836,10 +2899,10 @@
                 "Comment": "Internal Primary Key for the molecule"
             },
             {
-                "Keys": "PREF_NAME",
-                "ColumnName": "VARCHAR2(255)",
-                "DataType": "Preferred name for the molecule",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PREF_NAME",
+                "DataType": "VARCHAR2(255)",
+                "Nullable": "Preferred name for the molecule",
                 "Comment": ""
             },
             {
@@ -2850,186 +2913,186 @@
                 "Comment": "ChEMBL identifier for this compound (for use on web interface etc)"
             },
             {
-                "Keys": "MAX_PHASE",
-                "ColumnName": "NUMBER",
-                "DataType": "Maximum phase of development reached for the compound across all indications (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase, NULL = preclinical compounds with bioactivity data)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MAX_PHASE",
+                "DataType": "NUMBER",
+                "Nullable": "Maximum phase of development reached for the compound across all indications (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase, NULL = preclinical compounds with bioactivity data)",
                 "Comment": ""
             },
             {
-                "Keys": "THERAPEUTIC_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates that a drug has a therapeutic application, as opposed to e.g., an imaging agent, additive etc (1 = yes, 0 = default value).",
+                "Keys": "",
+                "ColumnName": "THERAPEUTIC_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates that a drug has a therapeutic application, as opposed to e.g., an imaging agent, additive etc (1 = yes, 0 = default value)."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "DOSED_INGREDIENT",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates that the drug is dosed in this form, e.g., a particular salt (1 = yes, 0 = default value)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "STRUCTURE_TYPE",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the molecule has a small molecule structure or a protein sequence (MOL indicates an entry in the compound_structures table, SEQ indications an entry in the protein_therapeutics table, NONE indicates an entry in neither table, e.g., structure unknown)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "CHEBI_PAR_ID",
+                "DataType": "NUMBER",
+                "Nullable": "Preferred ChEBI ID for the compound (where different from assigned). TO BE DEPRECATED - please use UniChem (https://www.ebi.ac.uk/unichem/).",
                 "Comment": ""
             },
             {
-                "Keys": "DOSED_INGREDIENT",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates that the drug is dosed in this form, e.g., a particular salt (1 = yes, 0 = default value)",
+                "Keys": "",
+                "ColumnName": "MOLECULE_TYPE",
+                "DataType": "VARCHAR2(30)",
+                "Nullable": "Type of molecule (Small molecule, Protein, Antibody, Antibody drug conjugate, Oligosaccharide, Oligonucleotide, Cell, Enzyme, Gene, Unknown)",
                 "Comment": ""
             },
             {
-                "Keys": "STRUCTURE_TYPE",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the molecule has a small molecule structure or a protein sequence (MOL indicates an entry in the compound_structures table, SEQ indications an entry in the protein_therapeutics table, NONE indicates an entry in neither table, e.g., structure unknown)",
+                "Keys": "",
+                "ColumnName": "FIRST_APPROVAL",
+                "DataType": "NUMBER",
+                "Nullable": "Earliest known approval year for the drug (NULL is the default value)",
                 "Comment": ""
             },
             {
-                "Keys": "CHEBI_PAR_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "Preferred ChEBI ID for the compound (where different from assigned). TO BE DEPRECATED - please use UniChem (https://www.ebi.ac.uk/unichem/).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORAL",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the drug is known to be administered orally (1 = yes, 0 = default value)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "PARENTERAL",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the drug is known to be administered parenterally (1 = yes, 0 = default value)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TOPICAL",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the drug is known to be administered topically (1 = yes, 0 = default value)."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "BLACK_BOX_WARNING",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates that the drug has a black box warning (1 = yes, 0 = default value)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "NATURAL_PRODUCT",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the compound is a natural product as defined by COCONUT (https://coconut.naturalproducts.net/), the COlleCtion of Open Natural ProdUcTs. (1 = yes, 0 = default value)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "FIRST_IN_CLASS",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether this is known to be the first approved drug of its class (e.g., acting on a particular target). This is regardless of the indication, or the route of administration (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "CHIRALITY",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Shows whether a drug is dosed as a racemic mixture (0), single stereoisomer (1), an achiral molecule (2), or has unknown chirality (-1)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "PRODRUG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates that the drug is a pro-drug. See active_molregno field in molecule hierarchy for the pharmacologically active molecule, where known (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "INORGANIC_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the molecule is inorganic i.e., containing only metal atoms and <2 carbon atoms (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "USAN_YEAR",
+                "DataType": "NUMBER",
+                "Nullable": "The year in which the application for a USAN/INN name was granted. (NULL is the default value)",
                 "Comment": ""
             },
             {
-                "Keys": "MOLECULE_TYPE",
-                "ColumnName": "VARCHAR2(30)",
-                "DataType": "Type of molecule (Small molecule, Protein, Antibody, Antibody drug conjugate, Oligosaccharide, Oligonucleotide, Cell, Enzyme, Gene, Unknown)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "AVAILABILITY_TYPE",
+                "DataType": "NUMBER",
+                "Nullable": "The availability type for the drug (-2 = withdrawn, -1 = unknown, 0 = discontinued, 1 = prescription only, 2 = over the counter)",
                 "Comment": ""
             },
             {
-                "Keys": "FIRST_APPROVAL",
-                "ColumnName": "NUMBER",
-                "DataType": "Earliest known approval year for the drug (NULL is the default value)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "USAN_STEM",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Where the drug or clinical candidate name can be matched, this indicates the USAN stem (NULL is the default value). Also described in the USAN_STEMS table.",
                 "Comment": ""
             },
             {
-                "Keys": "ORAL",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the drug is known to be administered orally (1 = yes, 0 = default value)",
+                "Keys": "",
+                "ColumnName": "POLYMER_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "Indicates whether a molecule is a small molecule polymer, e.g., polistyrex (1 = yes, 0 = default value)",
                 "Comment": ""
             },
             {
-                "Keys": "PARENTERAL",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the drug is known to be administered parenterally (1 = yes, 0 = default value)",
+                "Keys": "",
+                "ColumnName": "USAN_SUBSTEM",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Where the drug or clinical candidate name can be matched, this indicates the USAN substem (NULL is the default value)",
                 "Comment": ""
             },
             {
-                "Keys": "TOPICAL",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the drug is known to be administered topically (1 = yes, 0 = default value).",
+                "Keys": "",
+                "ColumnName": "USAN_STEM_DEFINITION",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Definition of the USAN stem (NULL is the default value)",
                 "Comment": ""
             },
             {
-                "Keys": "BLACK_BOX_WARNING",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates that the drug has a black box warning (1 = yes, 0 = default value)",
+                "Keys": "",
+                "ColumnName": "INDICATION_CLASS",
+                "DataType": "VARCHAR2(1000)",
+                "Nullable": "Indication class(es) assigned to a drug in the USP dictionary. TO BE DEPRECATED - please use DRUG_INDICATION table.",
                 "Comment": ""
             },
             {
-                "Keys": "NATURAL_PRODUCT",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the compound is a natural product as defined by COCONUT (https://coconut.naturalproducts.net/), the COlleCtion of Open Natural ProdUcTs. (1 = yes, 0 = default value)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "WITHDRAWN_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates an approved drug has been withdrawn for toxicity reasons for all indications, for all populations at all doses in at least one country (not necessarily in the US). (1 = yes, 0 = default value)"
             },
             {
-                "Keys": "FIRST_IN_CLASS",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether this is known to be the first approved drug of its class (e.g., acting on a particular target). This is regardless of the indication, or the route of administration (1 = yes, 0 = no, -1 = preclinical compound ie not a drug).",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "CHEMICAL_PROBE",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates whether the compound is a chemical probe; for exact definition see release notes (1 = yes, 0 = default value)."
             },
             {
-                "Keys": "CHIRALITY",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Shows whether a drug is dosed as a racemic mixture (0), single stereoisomer (1), an achiral molecule (2), or has unknown chirality (-1)",
-                "Comment": ""
-            },
-            {
-                "Keys": "PRODRUG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates that the drug is a pro-drug. See active_molregno field in molecule hierarchy for the pharmacologically active molecule, where known (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)",
-                "Comment": ""
-            },
-            {
-                "Keys": "INORGANIC_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the molecule is inorganic i.e., containing only metal atoms and <2 carbon atoms (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)",
-                "Comment": ""
-            },
-            {
-                "Keys": "USAN_YEAR",
-                "ColumnName": "NUMBER",
-                "DataType": "The year in which the application for a USAN/INN name was granted. (NULL is the default value)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "AVAILABILITY_TYPE",
-                "ColumnName": "NUMBER",
-                "DataType": "The availability type for the drug (-2 = withdrawn, -1 = unknown, 0 = discontinued, 1 = prescription only, 2 = over the counter)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "USAN_STEM",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Where the drug or clinical candidate name can be matched, this indicates the USAN stem (NULL is the default value). Also described in the USAN_STEMS table.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "POLYMER_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "Indicates whether a molecule is a small molecule polymer, e.g., polistyrex (1 = yes, 0 = default value)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "USAN_SUBSTEM",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Where the drug or clinical candidate name can be matched, this indicates the USAN substem (NULL is the default value)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "USAN_STEM_DEFINITION",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Definition of the USAN stem (NULL is the default value)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "INDICATION_CLASS",
-                "ColumnName": "VARCHAR2(1000)",
-                "DataType": "Indication class(es) assigned to a drug in the USP dictionary. TO BE DEPRECATED - please use DRUG_INDICATION table.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "WITHDRAWN_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates an approved drug has been withdrawn for toxicity reasons for all indications, for all populations at all doses in at least one country (not necessarily in the US). (1 = yes, 0 = default value)",
-                "Comment": ""
-            },
-            {
-                "Keys": "CHEMICAL_PROBE",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates whether the compound is a chemical probe; for exact definition see release notes (1 = yes, 0 = default value).",
-                "Comment": ""
-            },
-            {
-                "Keys": "ORPHAN",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates orphan designation, i.e. intended for use against a rare condition (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "ORPHAN",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates orphan designation, i.e. intended for use against a rare condition (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)"
             }
         ]
     },
@@ -3195,24 +3258,24 @@
                 "Comment": ""
             },
             {
-                "Keys": "L1",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Highest level classification (e.g., Eukaryotes, Bacteria, Fungi etc)",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "L1",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Highest level classification (e.g., Eukaryotes, Bacteria, Fungi etc)",
                 "Comment": ""
             },
             {
-                "Keys": "L2",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Second level classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "L2",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Second level classification",
                 "Comment": ""
             },
             {
-                "Keys": "L3",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Third level classification",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "L3",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Third level classification",
                 "Comment": ""
             }
         ]
@@ -3228,11 +3291,11 @@
                 "Comment": "Primary key. Patent use code from FDA Orange Book"
             },
             {
-                "Keys": "DEFINITION",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "NOT NULL",
-                "Nullable": "Definition for the patent use code, from FDA Orange Book.",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "DEFINITION",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "NOT NULL",
+                "Comment": "Definition for the patent use code, from FDA Orange Book."
             }
         ]
     },
@@ -3261,17 +3324,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "PREDICTION_METHOD",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "The method used to assign the binding domain (e.g., 'Single domain' where the protein has only 1 domain, 'Multi domain' where the protein has multiple domains, but only 1 is known to bind small molecules in other proteins).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PREDICTION_METHOD",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "The method used to assign the binding domain (e.g., 'Single domain' where the protein has only 1 domain, 'Multi domain' where the protein has multiple domains, but only 1 is known to bind small molecules in other proteins).",
                 "Comment": ""
             },
             {
-                "Keys": "CONFIDENCE",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "The level of confidence assigned to the prediction (high where the protein has only 1 domain, medium where the compound has multiple domains, but only 1 known small molecule-binding domain).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CONFIDENCE",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "The level of confidence assigned to the prediction (high where the protein has only 1 domain, medium where the compound has multiple domains, but only 1 known small molecule-binding domain).",
                 "Comment": ""
             }
         ]
@@ -3308,18 +3371,18 @@
                 "Comment": "Date the patent expires as submitted by the applicant holder including applicable extensions"
             },
             {
-                "Keys": "DRUG_SUBSTANCE_FLAG NUMBER",
-                "ColumnName": "NOT NULL",
-                "DataType": "Patents submitted on FDA Form 3542 and listed after August 18, 2003 may have a drug substance flag set to 1, indicating the sponsor submitted the patent as claiming the drug substance",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "DRUG_SUBSTANCE_FLAG NUMBER",
+                "DataType": "NOT NULL",
+                "Nullable": "Patents submitted on FDA Form 3542 and listed after August 18, 2003 may have a drug substance flag set to 1, indicating the sponsor submitted the patent as claiming the drug substance",
                 "Comment": ""
             },
             {
-                "Keys": "DRUG_PRODUCT_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Patents submitted on FDA Form 3542 and listed after August 18, 2003 may have a drug product flag set to 1, indicating the sponsor submitted the patent as claiming the drug product",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "DRUG_PRODUCT_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Patents submitted on FDA Form 3542 and listed after August 18, 2003 may have a drug product flag set to 1, indicating the sponsor submitted the patent as claiming the drug product"
             },
             {
                 "Keys": "FK,UK",
@@ -3329,17 +3392,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "DELIST_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Sponsor has requested patent be delisted if set to 1.",
-                "Comment": "This patent has remained listed because, under Section 505(j)(5)(D)(i) of the Act, a first applicant may retain eligibility for 180-day exclusivity based on a paragraph IV certification to this patent for a certain period."
+                "Keys": "",
+                "ColumnName": "DELIST_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Sponsor has requested patent be delisted if set to 1."
             },
             {
-                "Keys": "SUBMISSION_DATE",
-                "ColumnName": "DATE",
-                "DataType": "The date on which the FDA receives patent information from the new drug application (NDA) holder. Format is Mmm d, yyyy",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SUBMISSION_DATE",
+                "DataType": "DATE",
+                "Nullable": "The date on which the FDA receives patent information from the new drug application (NDA) holder. Format is Mmm d, yyyy",
                 "Comment": ""
             }
         ]
@@ -3348,73 +3411,80 @@
         "TableName": "PRODUCTS",
         "Columns": [
             {
-                "Keys": "DOSAGE_FORM",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "The dosage form of the product (e.g., tablet, capsule etc)",
+                "Keys": "",
+                "ColumnName": "DOSAGE_FORM",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "The dosage form of the product (e.g., tablet, capsule etc)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "ROUTE",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "The administration route of the product (e.g., oral, injection etc)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TRADE_NAME",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "The trade name for the product",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "APPROVAL_DATE",
+                "DataType": "DATE",
+                "Nullable": "The FDA approval date for the product (not necessarily first approval of the active ingredient)",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "AD_TYPE",
+                "DataType": "VARCHAR2(5)",
+                "Nullable": "RX = prescription, OTC = over the counter, DISCN = discontinued",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "ORAL",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether product is orally delivered",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TOPICAL",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether product is topically delivered",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "PARENTERAL",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether product is parenterally delivered",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "BLACK_BOX_WARNING",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether the product label has a black box warning",
+                "Comment": ""
+            },
+            {
+                "Keys": "",
+                "ColumnName": "APPLICANT_FULL_NAME VARCHAR2(200)",
+                "DataType": "Name of the company applying for FDA approval",
                 "Nullable": "",
                 "Comment": ""
             },
             {
-                "Keys": "ROUTE",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "The administration route of the product (e.g., oral, injection etc)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "TRADE_NAME",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "The trade name for the product",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "APPROVAL_DATE",
-                "ColumnName": "DATE",
-                "DataType": "The FDA approval date for the product (not necessarily first approval of the active ingredient)",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "AD_TYPE",
-                "ColumnName": "VARCHAR2(5)",
-                "DataType": "RX = prescription, OTC = over the counter, DISCN = discontinued",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "ORAL",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether product is orally delivered",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "TOPICAL",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether product is topically delivered",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "PARENTERAL",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether product is parenterally delivered",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "BLACK_BOX_WARNING",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether the product label has a black box warning",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "INNOVATOR_COMPANY",
-                "ColumnName": "NUMBER",
-                "DataType": "Flag to show whether the applicant is the innovator of the product",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "INNOVATOR_COMPANY",
+                "DataType": "NUMBER",
+                "Nullable": "Flag to show whether the applicant is the innovator of the product",
                 "Comment": ""
             },
             {
@@ -3425,11 +3495,11 @@
                 "Comment": "FDA application number for the product"
             },
             {
-                "Keys": "NDA_TYPE",
-                "ColumnName": "VARCHAR2(10)",
-                "DataType": "New Drug Application Type. The type of new drug application approval.",
-                "Nullable": "New Drug Applications (NDA or innovator)",
-                "Comment": "are \u201dN\u201d."
+                "Keys": "",
+                "ColumnName": "NDA_TYPE",
+                "DataType": "VARCHAR2(10)",
+                "Nullable": "New Drug Application Type. The type of new drug application approval.",
+                "Comment": "New Drug Applications (NDA or innovator)"
             }
         ]
     },
@@ -3477,46 +3547,46 @@
                 "Comment": "Primary key. Unique identifier for each protein family classification."
             },
             {
-                "Keys": "PARENT_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "Protein_class_id for the parent of this protein family.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PARENT_ID",
+                "DataType": "NUMBER",
+                "Nullable": "Protein_class_id for the parent of this protein family.",
                 "Comment": ""
             },
             {
-                "Keys": "PREF_NAME",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "Preferred/full name for this protein family.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PREF_NAME",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "Preferred/full name for this protein family.",
                 "Comment": ""
             },
             {
-                "Keys": "SHORT_NAME",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Short/abbreviated name for this protein family (not necessarily unique).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SHORT_NAME",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Short/abbreviated name for this protein family (not necessarily unique).",
                 "Comment": ""
             },
             {
-                "Keys": "PROTEIN_CLASS_DESC",
-                "ColumnName": "VARCHAR2(410)",
-                "DataType": "NOT NULL",
-                "Nullable": "Concatenated description of each classification for searching purposes etc.",
+                "Keys": "",
+                "ColumnName": "PROTEIN_CLASS_DESC",
+                "DataType": "VARCHAR2(410)",
+                "Nullable": "NOT NULL",
+                "Comment": "Concatenated description of each classification for searching purposes etc."
+            },
+            {
+                "Keys": "",
+                "ColumnName": "DEFINITION",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Definition of the protein family.",
                 "Comment": ""
             },
             {
-                "Keys": "DEFINITION",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Definition of the protein family.",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "CLASS_LEVEL",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Level of the class within the hierarchy (level 1 = top level classification)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "CLASS_LEVEL",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Level of the class within the hierarchy (level 1 = top level classification)"
             }
         ]
     },
@@ -3531,10 +3601,10 @@
                 "Comment": "Relationship_type flag used in the assays table"
             },
             {
-                "Keys": "RELATIONSHIP_DESC",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Description of relationship_type flags",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "RELATIONSHIP_DESC",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Description of relationship_type flags",
                 "Comment": ""
             }
         ]
@@ -3564,17 +3634,17 @@
                 "Comment": ""
             },
             {
-                "Keys": "COUNTRY",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Country in which the company uses this research code stem. TO BE DEPRECATED.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COUNTRY",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Country in which the company uses this research code stem. TO BE DEPRECATED.",
                 "Comment": ""
             },
             {
-                "Keys": "PREVIOUS_COMPANY",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Previous name of the company associated with this research code stem (e.g., if the company has undergone acquisitions/mergers). TO BE DEPRECATED.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PREVIOUS_COMPANY",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Previous name of the company associated with this research code stem (e.g., if the company has undergone acquisitions/mergers). TO BE DEPRECATED.",
                 "Comment": ""
             }
         ]
@@ -3630,10 +3700,10 @@
                 "Comment": ""
             },
             {
-                "Keys": "SITE_RESIDUES",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "List of residues from the given molecular component that make up the binding site (where not know, will be null).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SITE_RESIDUES",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "List of residues from the given molecular component that make up the binding site (where not know, will be null).",
                 "Comment": ""
             }
         ]
@@ -3649,17 +3719,17 @@
                 "Comment": "Identifier for each source (used in compound_records and assays tables)"
             },
             {
-                "Keys": "SRC_DESCRIPTION",
-                "ColumnName": "VARCHAR2(500)",
-                "DataType": "Description of the data source",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SRC_DESCRIPTION",
+                "DataType": "VARCHAR2(500)",
+                "Nullable": "Description of the data source",
                 "Comment": ""
             },
             {
-                "Keys": "SRC_SHORT_NAME",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "A short name for each data source, for display purposes",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SRC_SHORT_NAME",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "A short name for each data source, for display purposes",
                 "Comment": ""
             }
         ]
@@ -3682,11 +3752,11 @@
                 "Comment": "Name (or origin) of the structural alert set"
             },
             {
-                "Keys": "PRIORITY",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Priority assigned to the structural alert set for display on the ChEMBL interface (priorities >=4 are shown by default).",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "PRIORITY",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Priority assigned to the structural alert set for display on the ChEMBL interface (priorities >=4 are shown by default)."
             }
         ]
     },
@@ -3748,11 +3818,11 @@
                 "Comment": "Primary key."
             },
             {
-                "Keys": "HOMOLOGUE",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Indicates that the given component is a homologue of the correct component (e.g., from a different species) when set to 1. This may be the case if the sequence for the correct protein/nucleic acid cannot be found in sequence databases. A value of 2 indicates that the sequence given is a representative of a species group, e.g., an E. coli protein to represent the target of a broad-spectrum antibiotic.",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "HOMOLOGUE",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Indicates that the given component is a homologue of the correct component (e.g., from a different species) when set to 1. This may be the case if the sequence for the correct protein/nucleic acid cannot be found in sequence databases. A value of 2 indicates that the sequence given is a representative of a species group, e.g., an E. coli protein to represent the target of a broad-spectrum antibiotic."
             }
         ]
     },
@@ -3774,24 +3844,24 @@
                 "Comment": ""
             },
             {
-                "Keys": "PREF_NAME",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "NOT NULL",
-                "Nullable": "Preferred target name: manually curated",
+                "Keys": "",
+                "ColumnName": "PREF_NAME",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "NOT NULL",
+                "Comment": "Preferred target name: manually curated"
+            },
+            {
+                "Keys": "",
+                "ColumnName": "TAX_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NCBI taxonomy id of target",
                 "Comment": ""
             },
             {
-                "Keys": "TAX_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NCBI taxonomy id of target",
-                "Nullable": "",
-                "Comment": ""
-            },
-            {
-                "Keys": "ORGANISM",
-                "ColumnName": "VARCHAR2(150)",
-                "DataType": "Source organism of molecuar target or tissue, or the target organism if compound activity is reported in an organism rather than a protein or tissue",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORGANISM",
+                "DataType": "VARCHAR2(150)",
+                "Nullable": "Source organism of molecuar target or tissue, or the target organism if compound activity is reported in an organism rather than a protein or tissue",
                 "Comment": ""
             },
             {
@@ -3802,11 +3872,11 @@
                 "Comment": "ChEMBL identifier for this target (for use on web interface etc)"
             },
             {
-                "Keys": "SPECIES_GROUP_FLAG",
-                "ColumnName": "NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": "Flag to indicate whether the target represents a group of species, rather than an individual species (e.g., 'Bacterial DHFR'). Where set to 1, indicates that any associated target components will be a representative, rather than a comprehensive set.",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "SPECIES_GROUP_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
+                "Comment": "Flag to indicate whether the target represents a group of species, rather than an individual species (e.g., 'Bacterial DHFR'). Where set to 1, indicates that any associated target components will be a representative, rather than a comprehensive set."
             }
         ]
     },
@@ -3821,11 +3891,11 @@
                 "Comment": "Identifier for target of interest (foreign key to target_dictionary table)"
             },
             {
-                "Keys": "RELATIONSHIP",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "NOT NULL",
-                "Nullable": "Relationship between two targets (e.g., SUBSET OF, SUPERSET OF, OVERLAPS WITH)",
-                "Comment": ""
+                "Keys": "",
+                "ColumnName": "RELATIONSHIP",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "NOT NULL",
+                "Comment": "Relationship between two targets (e.g., SUBSET OF, SUPERSET OF, OVERLAPS WITH)"
             },
             {
                 "Keys": "FK",
@@ -3854,17 +3924,17 @@
                 "Comment": "Target type (as used in target dictionary)"
             },
             {
-                "Keys": "TARGET_DESC",
-                "ColumnName": "VARCHAR2(250)",
-                "DataType": "Description of target type",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TARGET_DESC",
+                "DataType": "VARCHAR2(250)",
+                "Nullable": "Description of target type",
                 "Comment": ""
             },
             {
-                "Keys": "PARENT_TYPE",
-                "ColumnName": "VARCHAR2(25)",
-                "DataType": "Higher level classification of target_type, allowing grouping of e.g., all 'PROTEIN' targets, all 'NON-MOLECULAR' targets etc.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "PARENT_TYPE",
+                "DataType": "VARCHAR2(25)",
+                "Nullable": "Higher level classification of target_type, allowing grouping of e.g., all 'PROTEIN' targets, all 'NON-MOLECULAR' targets etc.",
                 "Comment": ""
             }
         ]
@@ -3908,17 +3978,17 @@
                 "Comment": "ChEMBL identifier for this tissue (for use on web interface etc)"
             },
             {
-                "Keys": "BTO_ID",
-                "ColumnName": "VARCHAR2(20)",
-                "DataType": "BRENDA Tissue Ontology identifier for the tissue.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "BTO_ID",
+                "DataType": "VARCHAR2(20)",
+                "Nullable": "BRENDA Tissue Ontology identifier for the tissue.",
                 "Comment": ""
             },
             {
-                "Keys": "CALOHA_ID",
-                "ColumnName": "VARCHAR2(7)",
-                "DataType": "Swiss Institute for Bioinformatics CALOHA Ontology identifier for the tissue.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CALOHA_ID",
+                "DataType": "VARCHAR2(7)",
+                "Nullable": "Swiss Institute for Bioinformatics CALOHA Ontology identifier for the tissue.",
                 "Comment": ""
             }
         ]
@@ -3948,24 +4018,24 @@
                 "Comment": ""
             },
             {
-                "Keys": "ANNOTATION",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Meaning of the stem (e.g., the class of compound it applies to).",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ANNOTATION",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Meaning of the stem (e.g., the class of compound it applies to).",
                 "Comment": ""
             },
             {
-                "Keys": "STEM_CLASS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Indicates whether stem is used as a prefix/infix/suffix/combined prefix and suffix",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "STEM_CLASS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Indicates whether stem is used as a prefix/infix/suffix/combined prefix and suffix",
                 "Comment": ""
             },
             {
-                "Keys": "MAJOR_CLASS",
-                "ColumnName": "VARCHAR2(100)",
-                "DataType": "Protein family targeted by compounds of this class (e.g., GPCR/Ion channel/Protease) where known/applicable. TO BE DEPRECATED.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "MAJOR_CLASS",
+                "DataType": "VARCHAR2(100)",
+                "Nullable": "Protein family targeted by compounds of this class (e.g., GPCR/Ion channel/Protease) where known/applicable. TO BE DEPRECATED.",
                 "Comment": ""
             }
         ]
@@ -3995,38 +4065,38 @@
                 "Comment": ""
             },
             {
-                "Keys": "VERSION",
-                "ColumnName": "NUMBER",
-                "DataType": "Version of the UniProt sequence used as the base sequence.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "VERSION",
+                "DataType": "NUMBER",
+                "Nullable": "Version of the UniProt sequence used as the base sequence.",
                 "Comment": ""
             },
             {
-                "Keys": "ISOFORM",
-                "ColumnName": "NUMBER",
-                "DataType": "Details of the UniProt isoform used as the base sequence where relevant.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ISOFORM",
+                "DataType": "NUMBER",
+                "Nullable": "Details of the UniProt isoform used as the base sequence where relevant.",
                 "Comment": ""
             },
             {
-                "Keys": "SEQUENCE",
-                "ColumnName": "CLOB",
-                "DataType": "Variant sequence formed by adjusting the UniProt base sequence with the specified mutations/variations.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "SEQUENCE",
+                "DataType": "CLOB",
+                "Nullable": "Variant sequence formed by adjusting the UniProt base sequence with the specified mutations/variations.",
                 "Comment": ""
             },
             {
-                "Keys": "ORGANISM",
-                "ColumnName": "VARCHAR2(200)",
-                "DataType": "Organism from which the sequence was obtained.",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "ORGANISM",
+                "DataType": "VARCHAR2(200)",
+                "Nullable": "Organism from which the sequence was obtained.",
                 "Comment": ""
             },
             {
-                "Keys": "TAX_ID",
-                "ColumnName": "NUMBER",
-                "DataType": "NCBI Tax ID for the organism from which the sequence was obtained",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "TAX_ID",
+                "DataType": "NUMBER",
+                "Nullable": "NCBI Tax ID for the organism from which the sequence was obtained",
                 "Comment": ""
             }
         ]
@@ -4042,17 +4112,17 @@
                 "Comment": "Name of release version"
             },
             {
-                "Keys": "CREATION_DATE",
-                "ColumnName": "DATE",
-                "DataType": "Date database created",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "CREATION_DATE",
+                "DataType": "DATE",
+                "Nullable": "Date database created",
                 "Comment": ""
             },
             {
-                "Keys": "COMMENTS",
-                "ColumnName": "VARCHAR2(2000)",
-                "DataType": "Description of release version",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "COMMENTS",
+                "DataType": "VARCHAR2(2000)",
+                "Nullable": "Description of release version",
                 "Comment": ""
             }
         ]
@@ -4075,24 +4145,24 @@
                 "Comment": ""
             },
             {
-                "Keys": "REF_TYPE",
-                "ColumnName": "VARCHAR2(50)",
-                "DataType": "Type/source of reference",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "REF_TYPE",
+                "DataType": "VARCHAR2(50)",
+                "Nullable": "Type/source of reference",
                 "Comment": ""
             },
             {
-                "Keys": "REF_ID",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Identifier for the reference in the source",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "REF_ID",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Identifier for the reference in the source",
                 "Comment": ""
             },
             {
-                "Keys": "REF_URL",
-                "ColumnName": "VARCHAR2(4000)",
-                "DataType": "Full URL linking to the reference",
-                "Nullable": "",
+                "Keys": "",
+                "ColumnName": "REF_URL",
+                "DataType": "VARCHAR2(4000)",
+                "Nullable": "Full URL linking to the reference",
                 "Comment": ""
             }
         ]
