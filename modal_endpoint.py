@@ -14,20 +14,33 @@ auth_scheme = HTTPBearer()
 image = (
     Image.debian_slim(python_version="3.11")
     .pip_install(
-            "langchain==0.1.16",
-            "pandas",
-            "numpy",
-            "scipy",
-            "matplotlib"
-        )
+        "langchain==0.1.16",
+        "pandas",
+        "numpy",
+        "scipy",
+        "matplotlib",
+        "google-cloud-bigquery"
+    )
 )
 with image.imports():
-    print("Hello")
+    import os
+    from google.cloud.bigquery.client import Client
+
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "service-account.json"
+    client = Client()
 
 
 @stub.function(image=image, gpu="a100")
 def answer():
-    return {"success": True, "data": "HELLLOOOOOOOOO! I am from modal!"}
+    query = 'SELECT chembl_id, pref_name FROM `bigquery-public-data.ebi_chembl.molecule_dictionary` WHERE molecule_type = "Small molecule" LIMIT 10'
+    query_job = client.query(query)
+    rows = query_job.result()
+    send_text = ""
+    for row in rows:
+        send_text+=f"""{row.pref_name}, {row.chembl_id}"""
+
+    return {"success": True, "data": send_text}
+
 
 @web_app.post("/answer")
 async def endpoint(token: HTTPAuthorizationCredentials = Depends(auth_scheme),

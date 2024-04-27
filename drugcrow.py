@@ -59,10 +59,11 @@ async def drugs(ctx, message: str):
             )
             response.raise_for_status()
             data = await response.json()
-            await ctx.respond(data["data"])
+            await ctx.respond(data)
     else:
         with open('drugcrow.png', 'rb') as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
+
 
 bot.run(os.getenv("DISCORD_TOKEN"))
