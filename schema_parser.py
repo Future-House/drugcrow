@@ -43,7 +43,7 @@ def parse_schema(file_path):
 
                         if len(data) == 4:
                             last = data[-1]
-                            if "NULL" in last:
+                            if last == "NOT NULL":
                                 data = data + [""]
                             else:
                                 data = data[:-1] + [None, last]

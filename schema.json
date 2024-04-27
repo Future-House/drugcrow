@@ -2916,8 +2916,8 @@
                 "Keys": null,
                 "ColumnName": "MAX_PHASE",
                 "DataType": "NUMBER",
-                "Nullable": "Maximum phase of development reached for the compound across all indications (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase, NULL = preclinical compounds with bioactivity data)",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "Maximum phase of development reached for the compound across all indications (4 = Approved, 3 = Phase 3 Clinical Trials, 2 = Phase 2 Clinical Trials, 1 = Phase 1 Clinical Trials, 0.5 = Early Phase 1 Clinical Trials, -1 = Clinical Phase unknown for drug or clinical candidate drug ie where ChEMBL cannot assign a clinical phase, NULL = preclinical compounds with bioactivity data)"
             },
             {
                 "Keys": null,
@@ -2958,8 +2958,8 @@
                 "Keys": null,
                 "ColumnName": "FIRST_APPROVAL",
                 "DataType": "NUMBER",
-                "Nullable": "Earliest known approval year for the drug (NULL is the default value)",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "Earliest known approval year for the drug (NULL is the default value)"
             },
             {
                 "Keys": null,
@@ -3028,8 +3028,8 @@
                 "Keys": null,
                 "ColumnName": "USAN_YEAR",
                 "DataType": "NUMBER",
-                "Nullable": "The year in which the application for a USAN/INN name was granted. (NULL is the default value)",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "The year in which the application for a USAN/INN name was granted. (NULL is the default value)"
             },
             {
                 "Keys": null,
@@ -3042,8 +3042,8 @@
                 "Keys": null,
                 "ColumnName": "USAN_STEM",
                 "DataType": "VARCHAR2(50)",
-                "Nullable": "Where the drug or clinical candidate name can be matched, this indicates the USAN stem (NULL is the default value). Also described in the USAN_STEMS table.",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "Where the drug or clinical candidate name can be matched, this indicates the USAN stem (NULL is the default value). Also described in the USAN_STEMS table."
             },
             {
                 "Keys": null,
@@ -3056,15 +3056,15 @@
                 "Keys": null,
                 "ColumnName": "USAN_SUBSTEM",
                 "DataType": "VARCHAR2(50)",
-                "Nullable": "Where the drug or clinical candidate name can be matched, this indicates the USAN substem (NULL is the default value)",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "Where the drug or clinical candidate name can be matched, this indicates the USAN substem (NULL is the default value)"
             },
             {
                 "Keys": null,
                 "ColumnName": "USAN_STEM_DEFINITION",
                 "DataType": "VARCHAR2(1000)",
-                "Nullable": "Definition of the USAN stem (NULL is the default value)",
-                "Comment": ""
+                "Nullable": null,
+                "Comment": "Definition of the USAN stem (NULL is the default value)"
             },
             {
                 "Keys": null,
