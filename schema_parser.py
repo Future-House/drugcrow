@@ -31,14 +31,24 @@ def parse_schema(file_path):
                     try:
                         keytype = data[0]
                         if not re.match(r"^([A-Z]K,)*[A-Z]K$", keytype):
-                            data = [""] + data
+                            data = [None] + data
+
+                        if len(data) == 3:
+                            data += [None, ""]
+
+                        if len(data) == 4:
+                            last = data[-1]
+                            if "NULL" in last:
+                                data = data + [""]
+                            else:
+                                data = data[:-1] + [None, last]
 
                         column_entry = {
                             "Keys": data[0],
                             "ColumnName": data[1],
                             "DataType": data[2],
-                            "Nullable": data[3] if len(data) > 3 else "",
-                            "Comment": data[4] if len(data) > 4 else "",
+                            "Nullable": data[3],
+                            "Comment": data[4],
                         }
                     except IndexError:
                         print(f"Error parsing line: {line}")
