@@ -114,10 +114,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "POTENTIAL_DUPLICATE NUMBER",
-                "DataType": "When set to 1, indicates that the value is likely to be a repeat citation of a value reported in a previous ChEMBL paper, rather than a new, independent measurement. Note: value of zero does not guarantee that the measurement is novel/independent though",
+                "ColumnName": "POTENTIAL_DUPLICATE",
+                "DataType": "NUMBER",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "When set to 1, indicates that the value is likely to be a repeat citation of a value reported in a previous ChEMBL paper, rather than a new, independent measurement. Note: value of zero does not guarantee that the measurement is novel/independent though"
             },
             {
                 "Keys": null,
@@ -212,10 +212,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(1000)",
-                "DataType": "Standardized version of additional information about the measurement",
+                "ColumnName": "STANDARD_TEXT_VALUE",
+                "DataType": "VARCHAR2(1000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Standardized version of additional information about the measurement"
             },
             {
                 "Keys": "FK",
@@ -308,10 +308,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(2000)",
-                "DataType": "Standardised form of the TEXT_VALUE",
+                "ColumnName": "STANDARD_TEXT_VALUE",
+                "DataType": "VARCHAR2(2000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Standardised form of the TEXT_VALUE"
             },
             {
                 "Keys": null,
@@ -477,10 +477,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(1000)",
-                "DataType": "Standardised form of the TEXT_VALUE",
+                "ColumnName": "STANDARD_TEXT_VALUE",
+                "DataType": "VARCHAR2(1000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Standardised form of the TEXT_VALUE"
             },
             {
                 "Keys": null,
@@ -672,10 +672,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "STANDARD_TEXT_VALUE VARCHAR2(4000)",
-                "DataType": "Standardized form of the TEXT_VALUE",
+                "ColumnName": "STANDARD_TEXT_VALUE",
+                "DataType": "VARCHAR2(4000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Standardized form of the TEXT_VALUE"
             },
             {
                 "Keys": null,
@@ -2135,10 +2135,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "MECHANISM_OF_ACTION VARCHAR2(250)",
-                "DataType": "Description of the mechanism of action e.g., 'Phosphodiesterase 5 inhibitor'",
+                "ColumnName": "MECHANISM_OF_ACTION",
+                "DataType": "VARCHAR2(250)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Description of the mechanism of action e.g., 'Phosphodiesterase 5 inhibitor'"
             },
             {
                 "Keys": "FK",
@@ -2170,10 +2170,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "MOLECULAR_MECHANISM NUMBER",
-                "DataType": "Flag to show whether the mechanism of action describes the molecular target of the drug, rather than a higher-level physiological mechanism e.g., vasodilator (1 = yes, 0 = no)",
+                "ColumnName": "MOLECULAR_MECHANISM",
+                "DataType": "NUMBER",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Flag to show whether the mechanism of action describes the molecular target of the drug, rather than a higher-level physiological mechanism e.g., vasodilator (1 = yes, 0 = no)"
             },
             {
                 "Keys": null,
@@ -2191,10 +2191,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "SELECTIVITY_COMMENT VARCHAR2(1000)",
-                "DataType": "Additional comments regarding the selectivity of the drug",
+                "ColumnName": "SELECTIVITY_COMMENT",
+                "DataType": "VARCHAR2(1000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Additional comments regarding the selectivity of the drug"
             },
             {
                 "Keys": null,
@@ -2252,10 +2252,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "WARNING_DESCRIPTION VARCHAR2(4000)",
-                "DataType": "Description of the drug warning",
+                "ColumnName": "WARNING_DESCRIPTION",
+                "DataType": "VARCHAR2(4000)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Description of the drug warning"
             },
             {
                 "Keys": null,
@@ -2752,10 +2752,10 @@
             },
             {
                 "Keys": "FK,UK",
-                "ColumnName": "SUBSTRATE_RECORD_ID NUMBER",
-                "DataType": "Foreign key to compound_records. Record representing the compound that is the subject of metabolism",
+                "ColumnName": "SUBSTRATE_RECORD_ID",
+                "DataType": "NUMBER",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Foreign key to compound_records. Record representing the compound that is the subject of metabolism"
             },
             {
                 "Keys": "FK,UK",
@@ -3372,9 +3372,9 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "DRUG_SUBSTANCE_FLAG NUMBER",
-                "DataType": "NOT NULL",
-                "Nullable": null,
+                "ColumnName": "DRUG_SUBSTANCE_FLAG",
+                "DataType": "NUMBER",
+                "Nullable": "NOT NULL",
                 "Comment": "Patents submitted on FDA Form 3542 and listed after August 18, 2003 may have a drug substance flag set to 1, indicating the sponsor submitted the patent as claiming the drug substance"
             },
             {
@@ -3475,10 +3475,10 @@
             },
             {
                 "Keys": null,
-                "ColumnName": "APPLICANT_FULL_NAME VARCHAR2(200)",
-                "DataType": "Name of the company applying for FDA approval",
+                "ColumnName": "APPLICANT_FULL_NAME",
+                "DataType": "VARCHAR2(200)",
                 "Nullable": null,
-                "Comment": ""
+                "Comment": "Name of the company applying for FDA approval"
             },
             {
                 "Keys": null,

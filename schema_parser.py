@@ -33,6 +33,11 @@ def parse_schema(file_path):
                         if not re.match(r"^([A-Z]K,)*[A-Z]K$", keytype):
                             data = [None] + data
 
+                        column_name = data[1]
+                        if " " in column_name:
+                            column_name, dtype = column_name.split(" ")
+                            data = [data[0], column_name, dtype] + data[2:]
+
                         if len(data) == 3:
                             data += [None, ""]
 
