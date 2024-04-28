@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import networkx as nx
 
 
 def read_json_file(file_path):
@@ -13,6 +14,7 @@ def read_json_file(file_path):
 if __name__ == "__main__":
     file_path = "schema.json"
     data = read_json_file(file_path)
+    graph = nx.Graph()
 
     graph_dict = {}
     for json_object in data:
@@ -33,6 +35,3 @@ if __name__ == "__main__":
                 foreign_relationship = None
             table_dict[column_name.lower()] = foreign_relationship
         graph_dict[table_name.lower()] = table_dict
-
-    breakpoint()
-    graph_dict[list(graph_dict.keys())[1]]
