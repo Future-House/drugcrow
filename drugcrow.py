@@ -51,19 +51,22 @@ async def drugs(ctx, message: str):
     await ctx.respond(f"Working on message from {user_name}")
     request = {"message": message, "name": "DrugCrow"}
     # try:
-    if message == "Give me a drug fact":
+    try:
         async with ClientSession() as session:
             response = await session.post(
                 os.getenv("DRUGCROW_URL") + "/answer",
+                json=request,
+                timeout=400.0,
                 headers={"Authorization": f"Bearer {os.getenv('AUTH_TOKEN')}"},  # noqa
             )
             response.raise_for_status()
             data = await response.json()
             await ctx.respond(data)
-    else:
+    except:
         with open('drugcrow.png', 'rb') as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
+            await ctx.send("This is not my fault. Give me a better prompt next time.")
 
 
 bot.run(os.getenv("DISCORD_TOKEN"))
